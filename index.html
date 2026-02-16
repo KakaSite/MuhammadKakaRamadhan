@@ -20,11 +20,14 @@
 }
 
 body{
-    background:linear-gradient(180deg,#eef3ff,#ffffff);
+
+    background:linear-gradient(135deg,#4a90e2,#7b61ff);
     display:flex;
     justify-content:center;
     padding:30px 12px;
+    min-height:100vh;
 }
+
 
 .container{
     max-width:420px;
@@ -137,9 +140,12 @@ body{
 
 .progress-bar{
     height:100%;
-    background:#4a90e2;
-    width:85%;
+    background:linear-gradient(90deg,#4a90e2,#7b61ff);
+    width:0;
     border-radius:10px;
+    animation: skillLoad 2s ease-out forwards;
+}
+
 }
 
 .percentage{
