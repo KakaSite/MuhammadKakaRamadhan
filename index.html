@@ -8,7 +8,7 @@
 <!-- Google Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- Font Awesome (Instagram, YouTube, Email Icon Asli) -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -19,15 +19,17 @@
     font-family:"Segoe UI",sans-serif;
 }
 
+/* ===== BACKGROUND FOTO ===== */
 body{
-
-    background:linear-gradient(135deg,#4a90e2,#7b61ff);
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("PICKAKA.jpeg") no-repeat center center fixed;
+    background-size:cover;
     display:flex;
     justify-content:center;
     padding:30px 12px;
     min-height:100vh;
 }
-
 
 .container{
     max-width:420px;
@@ -42,7 +44,7 @@ body{
     border-radius:22px;
     color:white;
     margin-bottom:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 .profile-img{
@@ -102,21 +104,20 @@ body{
     margin:35px 0 15px;
     font-size:20px;
     font-weight:700;
-    color:#4a90e2;
+    color:white;
 }
 
 /* ===== CARD ===== */
 .card{
-    background:#fff;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(6px);
     border-radius:16px;
     padding:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
     margin-bottom:18px;
     text-align:left;
-    border:1px solid #dbe4ff;
 }
 
-/* ===== ABOUT TEXT ===== */
 .card p{
     font-size:14px;
     line-height:1.6;
@@ -143,9 +144,12 @@ body{
     background:linear-gradient(90deg,#4a90e2,#7b61ff);
     width:0;
     border-radius:10px;
-    animation: skillLoad 2s ease-out forwards;
+    animation:skillLoad 2s ease-out forwards;
 }
 
+@keyframes skillLoad{
+    from{width:0;}
+    to{width:65%;}
 }
 
 .percentage{
@@ -153,6 +157,12 @@ body{
     text-align:right;
     margin-top:3px;
     color:#555;
+    animation:fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
 /* ===== FOCUS AREA ===== */
@@ -188,7 +198,7 @@ body{
     color:#555;
 }
 
-/* ===== CONNECT SECTION ===== */
+/* ===== CONNECT ===== */
 a{
     text-decoration:none;
     color:inherit;
@@ -201,12 +211,12 @@ a{
 }
 
 .connect-card:hover{
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 .connect-card:active{
-    transform: scale(0.97);
+    transform:scale(0.97);
 }
 
 .connect-icon{
@@ -220,51 +230,29 @@ a{
     color:white;
     font-size:28px;
     margin-bottom:12px;
-    animation: pulseGlow 2.4s infinite;
+    animation:pulseGlow 2.4s infinite;
 }
 
-/* ===== PULSE GLOW ANIMATION ===== */
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
-    }
-    60% {
-        transform: scale(1.1);
-        box-shadow: 0 0 18px 8px rgba(255,255,255,0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255,255,255,0);
-    }
+@keyframes pulseGlow{
+    0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0.4);}
+    60%{transform:scale(1.1);box-shadow:0 0 18px 8px rgba(255,255,255,0);}
+    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0);}
 }
 
-/* ===== BRAND COLORS + GLOW ===== */
 .instagram{
     background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-    box-shadow:0 0 15px rgba(221,42,123,0.7);
 }
-
 .email{
     background:#7b61ff;
-    box-shadow:0 0 15px rgba(123,97,255,0.7);
 }
-
 .youtube{
     background:#ff0000;
-    box-shadow:0 0 15px rgba(255,0,0,0.7);
 }
 
-/* ===== DELAY TIAP ICON ===== */
-.connect-card:nth-of-type(1) .connect-icon{
-    animation-delay:0s;
-}
-.connect-card:nth-of-type(2) .connect-icon{
-    animation-delay:0.8s;
-}
-.connect-card:nth-of-type(3) .connect-icon{
-    animation-delay:1.6s;
-}
+/* Delay animasi */
+.connect-card:nth-of-type(1) .connect-icon{animation-delay:0s;}
+.connect-card:nth-of-type(2) .connect-icon{animation-delay:0.8s;}
+.connect-card:nth-of-type(3) .connect-icon{animation-delay:1.6s;}
 </style>
 </head>
 <body>
@@ -290,19 +278,14 @@ a{
 <!-- ABOUT -->
 <h2 class="section-title">About Me</h2>
 <div class="card">
-<p>
-Hello, I am <strong>Muhammad Kaka Ramadhan</strong>. I enjoy learning networking,cyber security,
-IT support, and building responsive websites.
-</p>
+<p>Hello, I am <strong>Muhammad Kaka Ramadhan</strong>. I enjoy learning networking, IT support,cyber security and web development.</p>
 </div>
 
 <!-- SKILLS -->
 <h2 class="section-title">My Skills</h2>
 <div class="card">
 <div class="skill-title">Computer Networking Basics</div>
-<div class="progress">
-<div class="progress-bar"></div>
-</div>
+<div class="progress"><div class="progress-bar"></div></div>
 <div class="percentage">65%</div>
 </div>
 
@@ -313,7 +296,7 @@ IT support, and building responsive websites.
 <div class="icon-box blue"><span class="material-icons">router</span></div>
 <div class="focus-content">
 <h3>Networking</h3>
-<p>Understanding devices & infrastructure.</p>
+<p>Understanding network infrastructure.</p>
 </div>
 </div>
 
@@ -328,7 +311,7 @@ IT support, and building responsive websites.
 <div class="icon-box red"><span class="material-icons">code</span></div>
 <div class="focus-content">
 <h3>Web Basics</h3>
-<p>Building responsive websites.</p>
+<p>HTML & CSS development.</p>
 </div>
 </div>
 
@@ -336,25 +319,19 @@ IT support, and building responsive websites.
 <h2 class="section-title">Connect With Me</h2>
 
 <a href="https://www.instagram.com/kaa_kemren?igsh=MXNvbXFicTQxcHZndw==" target="_blank" class="card connect-card">
-<div class="connect-icon instagram">
-<i class="fa-brands fa-instagram"></i>
-</div>
+<div class="connect-icon instagram"><i class="fa-brands fa-instagram"></i></div>
 <h4>Instagram</h4>
 <p>@kaa_kemren</p>
 </a>
 
 <a href="mailto:mkakaramadhan08@gmail.com" class="card connect-card">
-<div class="connect-icon email">
-<i class="fa-solid fa-envelope"></i>
-</div>
+<div class="connect-icon email"><i class="fa-solid fa-envelope"></i></div>
 <h4>Email</h4>
 <p>mkakaramadhan08@gmail.com</p>
 </a>
 
 <a href="https://www.youtube.com/@MUHAMMADKAKARAMADHAN-08" target="_blank" class="card connect-card">
-<div class="connect-icon youtube">
-<i class="fa-brands fa-youtube"></i>
-</div>
+<div class="connect-icon youtube"><i class="fa-brands fa-youtube"></i></div>
 <h4>YouTube</h4>
 <p>@MUHAMMADKAKARAMADHAN-08</p>
 </a>
