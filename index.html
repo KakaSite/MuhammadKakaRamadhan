@@ -1,45 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Kaka Ramadhan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 body{
-background:#0f0f0f;
-color:white;
-font-family:Arial;
-text-align:center;
-padding-top:60px;
+    background:linear-gradient(180deg,#000,#0a0a0a);
+    color:white;
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
 .card{
-background:#1a1a1a;
-width:300px;
-margin:auto;
-padding:25px;
-border-radius:18px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+    width:380px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 40px rgba(0,255,255,0.15);
+    animation:fade 1s ease;
 }
 
-img{
-width:140px;
-border-radius:50%;
-margin-bottom:15px;
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1;}
+}
+
+.photo{
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #00ffff;
+    box-shadow:0 0 20px #00ffff;
+}
+
+.name{
+    font-size:22px;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.bio{
+    opacity:0.8;
+    margin-top:5px;
+}
+
+a{
+    color:#4fd1ff;
+    text-decoration:none;
 }
 
 .link{
-display:block;
-background:#262626;
-margin:10px 0;
-padding:12px;
-border-radius:10px;
-color:white;
-text-decoration:none;
-font-weight:bold;
+    margin-top:15px;
 }
 
-.link:hover{
-background:#333;
+.music{
+    margin-top:20px;
+    opacity:0.9;
+}
+
+.skill{
+    margin-top:20px;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(0,255,255,0.08);
+}
+
+.skill-title{
+    font-weight:600;
+    color:#00ffff;
+}
+
+.social{
+    margin-top:20px;
+}
+
+.btn{
+    display:block;
+    padding:10px;
+    margin-top:8px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00ffff;
+    color:black;
+    transform:scale(1.05);
 }
 </style>
 </head>
@@ -48,16 +103,34 @@ background:#333;
 
 <div class="card">
 
-<img src="PICKAKA.jpeg">
+<center>
+<img src="PIC_KAKA.jpeg" class="photo">
+<div class="name">Muhammad Kaka Ramadhan</div>
+<div class="bio">Beranilah mengambil resiko, karena tak ada yang bisa menggantikan pengalaman.</div>
+</center>
 
-<h2>Muhammad Kaka Ramadhan</h2>
-<p>Fokus belajar. Konsisten tiap hari.</p>
+<div class="link">
+🔗 
+<a href="https://kakasite.github.io/MuhammadKakaRamadhan/">
+kakasite.github.io/MuhammadKakaRamadhan/
+</a>
+</div>
 
-<p><b>Skill:</b> Computer Networking Basic</p>
-<p><b>Focus:</b> Networking</p>
+<div class="music">
+🎵 It's Only Me • Kaleb J
+</div>
 
-<a class="link" href="https://instagram.com/kaa_kemren">Instagram</a>
-<a class="link" href="https://youtube.com/@MUHAMMADKAKARAMADHAN">YouTube</a>
+<div class="skill">
+<div class="skill-title">Skill</div>
+Computer Networking Basic  
+<br>
+Focus Area: Networking
+</div>
+
+<div class="social">
+<a class="btn" href="https://instagram.com/kaa_kemren">Instagram</a>
+<a class="btn" href="#">YouTube: MUHAMMADKAKARAMADHAN</a>
+</div>
 
 </div>
 
