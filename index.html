@@ -11,45 +11,47 @@
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
-    background:#f3f4f8;
-    color:#333;
+    background:#0f172a;
+    color:white;
 }
 
+/* HEADER */
 .header{
-    background:linear-gradient(180deg,#e9ecf5,#f3f4f8);
     text-align:center;
-    padding:40px 20px;
+    padding:50px 20px;
+    background:linear-gradient(180deg,#020617,#0f172a);
 }
 
 .photo{
-    width:110px;
-    height:110px;
+    width:120px;
+    height:120px;
     border-radius:50%;
-    object-fit:cover;
-    border:5px solid #d7dcef;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 25px #38bdf8;
 }
 
 .name{
-    font-size:28px;
+    font-size:30px;
     font-weight:700;
     margin-top:15px;
 }
 
 .sub{
-    color:#4a6fa5;
-    margin-top:5px;
+    color:#38bdf8;
+    margin-top:6px;
 }
 
 .tag{
-    background:#fff;
+    background:#020617;
     padding:8px 14px;
     border-radius:20px;
     display:inline-block;
     margin:6px;
-    font-size:14px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    font-size:13px;
+    border:1px solid #38bdf8;
 }
 
+/* SECTION */
 .section{
     padding:30px 20px;
     max-width:500px;
@@ -59,64 +61,89 @@ body{
 .title{
     font-size:22px;
     font-weight:700;
-    color:#4a6fa5;
+    color:#38bdf8;
     margin-bottom:15px;
 }
 
 .card{
-    background:white;
+    background:#020617;
     padding:20px;
     border-radius:16px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    border:1px solid #1e293b;
 }
 
+/* SKILL */
 .skill-box{
-    background:white;
+    background:#020617;
     padding:20px;
     border-radius:16px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    border:1px solid #1e293b;
 }
 
 .bar{
-    height:8px;
-    background:#e3e6f0;
+    height:10px;
+    background:#1e293b;
     border-radius:10px;
     margin-top:10px;
 }
 
 .fill{
-    height:8px;
-    width:60%;
-    background:linear-gradient(90deg,#4a6fa5,#9b6bff);
+    height:10px;
+    width:85%;
+    background:linear-gradient(90deg,#38bdf8,#8b5cf6);
     border-radius:10px;
+    animation:load 2s;
 }
 
-/* tombol sosmed */
+@keyframes load{
+from{width:0}
+to{width:85%}
+}
+
+/* BUTTON */
 .social{
-    margin-top:20px;
-    text-align:center;
+    margin-top:25px;
 }
 
 .btn{
-    display:inline-block;
-    padding:12px 18px;
-    margin:8px;
-    border-radius:12px;
+    display:block;
+    padding:14px;
+    margin:12px auto;
+    border-radius:14px;
+    width:220px;
     text-decoration:none;
     font-weight:600;
     color:white;
+    transition:0.3s;
 }
 
-.ig{ background:#e1306c; }
-.yt{ background:#ff0000; }
+.ig{
+    background:linear-gradient(90deg,#ff4d8d,#ff7a00);
+}
+.yt{
+    background:#ff0000;
+}
 
 .btn:hover{
-    opacity:0.85;
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:30px;
+    font-size:13px;
+    color:#64748b;
 }
 </style>
 </head>
 
 <body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="https://files.catbox.moe/9q6n3y.mp3" type="audio/mp3">
+</audio>
 
 <!-- HEADER -->
 <div class="header">
@@ -125,14 +152,15 @@ body{
 
 <div class="name">MUHAMMAD<br>KAKA RAMADHAN</div>
 
-<div class="sub">TJKT 2 Student, SMK Negeri 1 Cirebon • Networking Enthusiast</div>
+<div class="sub">TJKT 2  Student, SMK Negeri 1 Cirebon 
+ Networking Focus</div>
 
 <div>
 <span class="tag">Indonesia</span>
 <span class="tag">Networking</span>
+<span class="tag">Future Engineer</span>
 </div>
 
-<!-- TOMBOL SOSMED -->
 <div class="social">
 <a class="btn ig" href="https://instagram.com/kaa_kemren" target="_blank">Instagram</a>
 <a class="btn yt" href="https://youtube.com/@MUHAMMADKAKARAMADHAN" target="_blank">YouTube</a>
@@ -145,25 +173,29 @@ body{
 <div class="title">About Me</div>
 
 <div class="card">
-Hello. I am <b>Muhammad Kaka Ramadhan</b>.  
-I study Computer Networking.  
-I love learning about networking, system support, and building simple websites.  
-My passion is understanding how technology connects people.
+Hello, I am <b>Muhammad Kaka Ramadhan</b>.  
+I focus on <b>Computer Networking</b>.  
+I enjoy learning networking systems, troubleshooting, and building websites.  
+My goal is to become a professional network engineer.
 </div>
 </div>
 
-<!-- SKILLS -->
+<!-- SKILL -->
 <div class="section">
-<div class="title">My Skills</div>
+<div class="title">My Skill</div>
 
 <div class="skill-box">
-<b>Computer Networking Basics</b> <span style="float:right;">85%</span>
+Computer Networking Basic 60%
 
 <div class="bar">
 <div class="fill"></div>
 </div>
 
 </div>
+</div>
+
+<div class="footer">
+© 2026 Kaka Ramadhan
 </div>
 
 </body>
