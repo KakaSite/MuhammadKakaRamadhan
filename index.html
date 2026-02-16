@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Muhammad Kaka Ramadhan</title>
+<title>Joseph Salahudin Irawan</title>
+
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 *{
@@ -16,8 +19,12 @@
     font-family:"Segoe UI",sans-serif;
 }
 
+/* ===== BACKGROUND FOTO ===== */
 body{
-    background:#ffffff;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("background.jpg") no-repeat center center fixed;
+    background-size:cover;
     display:flex;
     justify-content:center;
     padding:30px 12px;
@@ -27,148 +34,309 @@ body{
 .container{
     max-width:420px;
     width:100%;
-}
-
-/* ===== PROFILE ===== */
-.profile{
     text-align:center;
-    padding:30px 20px;
+}
+
+/* ===== PROFILE HEADER ===== */
+.profile-header{
     background:linear-gradient(135deg,#4a90e2,#7b61ff);
+    padding:40px 20px;
+    border-radius:22px;
     color:white;
-    border-radius:20px;
-    margin-bottom:25px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.profile img{
-    width:110px;
-    height:110px;
+.profile-img{
+    width:120px;
+    height:120px;
+    margin:auto;
     border-radius:50%;
-    border:4px solid white;
+    padding:4px;
+    background:white;
+}
+
+.profile-img img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
     object-fit:cover;
-    margin-bottom:12px;
 }
 
-.profile h2{
-    font-size:18px;
+.profile-header h1{
+    margin-top:15px;
+    font-size:22px;
     font-weight:700;
+    line-height:1.3;
 }
 
-.profile p{
-    font-size:13px;
+.subtitle{
+    font-size:14px;
+    margin-top:8px;
     opacity:0.9;
+}
+
+.tagline{
+    font-size:13px;
+    margin-top:6px;
+    opacity:0.85;
+}
+
+.badge-container{
+    margin-top:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.badge{
+    background:rgba(255,255,255,0.2);
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    backdrop-filter:blur(5px);
+}
+
+/* ===== SECTION ===== */
+.section-title{
+    margin:35px 0 15px;
+    font-size:20px;
+    font-weight:700;
+    color:white;
 }
 
 /* ===== CARD ===== */
 .card{
-    background:#ffffff;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(6px);
     border-radius:16px;
     padding:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
-    margin-bottom:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    margin-bottom:18px;
+    text-align:left;
 }
 
-/* ===== SKILL ===== */
+.card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* ===== SKILLS ===== */
+.skill-title{
+    font-size:14px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
 .progress{
-    background:#e6e6e6;
-    height:10px;
+    width:100%;
+    height:8px;
+    background:#e0e6ff;
     border-radius:10px;
     overflow:hidden;
 }
 
 .progress-bar{
     height:100%;
-    width:0;
     background:linear-gradient(90deg,#4a90e2,#7b61ff);
+    width:0;
     border-radius:10px;
     animation:skillLoad 2s ease-out forwards;
 }
 
 @keyframes skillLoad{
     from{width:0;}
-    to{width:65%;}
+    to{width:85%;}
 }
 
-/* ===== SOCIAL ICON ===== */
-.social-icons{
+.percentage{
+    font-size:12px;
+    text-align:right;
+    margin-top:3px;
+    color:#555;
+    animation:fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* ===== FOCUS AREA ===== */
+.focus-card{
     display:flex;
-    justify-content:center;
-    gap:28px;
+    gap:15px;
+    align-items:flex-start;
 }
 
-.social-icons a{
-    width:55px;
-    height:55px;
-    border-radius:50%;
+.icon-box{
+    width:50px;
+    height:50px;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:24px;
     color:white;
+    font-size:26px;
+    flex-shrink:0;
+}
+
+.blue{background:#4a90e2;}
+.purple{background:#7b61ff;}
+.red{background:#ff5e6c;}
+
+.focus-content h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.focus-content p{
+    font-size:13px;
+    color:#555;
+}
+
+/* ===== CONNECT ===== */
+a{
     text-decoration:none;
-    animation:pulse 1.8s infinite;
+    color:inherit;
+}
+
+.connect-card{
+    text-align:center;
+    padding:22px;
     transition:0.3s;
 }
 
-/* Warna Brand */
-.instagram{background:#E1306C;}
-.email{background:#7b61ff;}
-.youtube{background:#FF0000;}
-
-.social-icons a:hover{
-    transform:scale(1.25);
+.connect-card:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
+.connect-card:active{
+    transform:scale(0.97);
 }
+
+.connect-icon{
+    width:55px;
+    height:55px;
+    margin:auto;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:28px;
+    margin-bottom:12px;
+    animation:pulseGlow 2.4s infinite;
+}
+
+@keyframes pulseGlow{
+    0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0.4);}
+    60%{transform:scale(1.1);box-shadow:0 0 18px 8px rgba(255,255,255,0);}
+    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0);}
+}
+
+.instagram{
+    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+.email{
+    background:#7b61ff;
+}
+.youtube{
+    background:#ff0000;
+}
+
+/* Delay animasi */
+.connect-card:nth-of-type(1) .connect-icon{animation-delay:0s;}
+.connect-card:nth-of-type(2) .connect-icon{animation-delay:0.8s;}
+.connect-card:nth-of-type(3) .connect-icon{animation-delay:1.6s;}
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <!-- PROFILE -->
-    <div class="profile">
-        <img src="PICKAKA.jpeg" alt="Muhammad Kaka Ramadhan">
-        <h2>MUHAMMAD KAKA RAMADHAN</h2>
-        <p>Student • IT & Networking</p>
+<!-- PROFILE -->
+<div class="profile-header">
+    <div class="profile-img">
+        <img src="PICKAKA.jpeg" alt="Profile">
     </div>
+    <h1>MUHAMMAD<br>KAKA<br>RAMADHAN</h1>
+    <p class="subtitle">TJKT 2 Student, SMK Negeri 1 Cirebon</p>
+    <p class="tagline">Aspiring IT & Networking Enthusiast</p>
 
-    <!-- SKILL -->
-    <div class="card">
-        <div class="progress">
-            <div class="progress-bar"></div>
-        </div>
+    <div class="badge-container">
+        <div class="badge">📍 West Java, Indonesia</div>
+        <div class="badge">🎓 Class X TJKT 2</div>
+        <div class="badge">💻 Networking Student</div>
     </div>
-
-    <!-- SOCIAL -->
-    <div class="card">
-        <div class="social-icons">
-
-            <a class="instagram" 
-               href="https://www.instagram.com/kaa_kemren/" 
-               target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a class="email" 
-               href="mailto:mkakaramadhan08@gmail.com">
-                <i class="fas fa-envelope"></i>
-            </a>
-
-            <a class="youtube" 
-               href="https://www.youtube.com/@MUHAMMADKAKARAMADHAN-08" 
-               target="_blank">
-                <i class="fab fa-youtube"></i>
-            </a>
-
-        </div>
-    </div>
-
 </div>
 
+<!-- ABOUT -->
+<h2 class="section-title">About Me</h2>
+<div class="card">
+<p>Hello, I am <strong>Muhammad Kaka Ramadhan</strong>. I enjoy learning networking, IT support, cyber security and web development.</p>
+</div>
+
+<!-- SKILLS -->
+<h2 class="section-title">My Skills</h2>
+<div class="card">
+<div class="skill-title">Computer Networking Basics</div>
+<div class="progress"><div class="progress-bar"></div></div>
+<div class="percentage">65%</div>
+</div>
+
+<!-- FOCUS -->
+<h2 class="section-title">Focus Area</h2>
+
+<div class="card focus-card">
+<div class="icon-box blue"><span class="material-icons">router</span></div>
+<div class="focus-content">
+<h3>Networking</h3>
+<p>Understanding network infrastructure.</p>
+</div>
+</div>
+
+<div class="card focus-card">
+<div class="icon-box purple"><span class="material-icons">computer</span></div>
+<div class="focus-content">
+<h3>IT Support</h3>
+<p>Troubleshooting systems.</p>
+</div>
+</div>
+
+<div class="card focus-card">
+<div class="icon-box red"><span class="material-icons">code</span></div>
+<div class="focus-content">
+<h3>Web Basics</h3>
+<p>HTML & CSS development.</p>
+</div>
+</div>
+
+<!-- CONNECT -->
+<h2 class="section-title">Connect With Me</h2>
+
+<a href="https://www.instagram.com/kaa_kemren?igsh=MXNvbXFicTQxcHZndw==" target="_blank" class="card connect-card">
+<div class="connect-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+<h4>Instagram</h4>
+<p>@kaa_kemren</p>
+</a>
+
+<a href="mailto:mkakaramadhan08@gmail.com" class="card connect-card">
+<div class="connect-icon email"><i class="fa-solid fa-envelope"></i></div>
+<h4>Email</h4>
+<p>mkakaramadhan08@gmail.com</p>
+</a>
+
+<a href="https://www.youtube.com/@MUHAMMADKAKARAMADHAN-08" target="_blank" class="card connect-card">
+<div class="connect-icon youtube"><i class="fa-brands fa-youtube"></i></div>
+<h4>YouTube</h4>
+<p>@MUHAMMADKAKARAMADHAN-08</p>
+</a>
+
+</div>
 </body>
 </html>
