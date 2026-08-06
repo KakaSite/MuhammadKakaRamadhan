@@ -20,8 +20,8 @@
     }
 
     body {
-        background: #0b0f19;
-        color: #f1f5f9;
+        background: #0f1712;
+        color: #f0fdf4;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -35,9 +35,9 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(11, 15, 25, 0.85);
+        background: rgba(15, 23, 18, 0.85);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(134, 239, 172, 0.12);
     }
 
     .nav-container {
@@ -53,7 +53,7 @@
         font-size: 20px;
         font-weight: 800;
         letter-spacing: 0.5px;
-        background: linear-gradient(135deg, #38bdf8, #818cf8);
+        background: linear-gradient(135deg, #86efac, #4ade80);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: flex;
@@ -74,7 +74,7 @@
         padding: 10px 18px;
         font-size: 14px;
         font-weight: 600;
-        color: #94a3b8;
+        color: #a7f3d0;
         cursor: pointer;
         border-radius: 12px;
         transition: all 0.3s ease;
@@ -84,18 +84,18 @@
     }
 
     .tab-btn:hover {
-        color: #f1f5f9;
-        background: rgba(255, 255, 255, 0.05);
+        color: #f0fdf4;
+        background: rgba(134, 239, 172, 0.08);
     }
 
     .tab-btn.active {
-        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        background: linear-gradient(135deg, #16a34a, #22c55e);
         color: white;
-        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+        box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
     }
 
     .tab-btn.admin-tab {
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(134, 239, 172, 0.2);
     }
 
     /* ===== MAIN CONTENT CONTAINER ===== */
@@ -123,7 +123,7 @@
     .section-title {
         font-size: 28px;
         font-weight: 800;
-        color: #f8fafc;
+        color: #f0fdf4;
         text-align: center;
         margin-bottom: 30px;
         letter-spacing: -0.5px;
@@ -131,27 +131,27 @@
 
     /* ===== CARD & CONTENT LAYOUT ===== */
     .card {
-        background: rgba(30, 41, 59, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(20, 35, 26, 0.7);
+        border: 1px solid rgba(134, 239, 172, 0.12);
         border-radius: 20px;
         padding: 28px;
         margin-bottom: 24px;
         backdrop-filter: blur(10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         position: relative;
     }
 
     .card p {
         font-size: 15px;
         line-height: 1.7;
-        color: #cbd5e1;
+        color: #d1fae5;
     }
 
     /* ===== HERO / PROFILE BANNER (BIODATA) ===== */
     .hero-banner {
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)),
-                    radial-gradient(circle at top right, rgba(99, 102, 241, 0.25), transparent);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, rgba(20, 35, 26, 0.9), rgba(15, 23, 18, 0.95)),
+                    radial-gradient(circle at top right, rgba(134, 239, 172, 0.2), transparent);
+        border: 1px solid rgba(134, 239, 172, 0.18);
         border-radius: 24px;
         padding: 50px 30px;
         text-align: center;
@@ -166,8 +166,8 @@
         margin: 0 auto 20px;
         border-radius: 50%;
         padding: 4px;
-        background: linear-gradient(135deg, #38bdf8, #818cf8);
-        box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+        background: linear-gradient(135deg, #86efac, #22c55e);
+        box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
     }
 
     .profile-img-wrap img {
@@ -183,21 +183,22 @@
         line-height: 1.2;
         letter-spacing: -0.5px;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, #ffffff, #cbd5e1);
+        background: linear-gradient(135deg, #ffffff, #bbf7d0);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
         font-size: 18px;
-        color: #38bdf8;
+        color: #86efac;
         font-weight: 600;
         margin-bottom: 6px;
     }
 
     .hero-tagline {
         font-size: 14px;
-        color: #94a3b8;
+        color: #86efac;
+        opacity: 0.8;
     }
 
     .badge-container {
@@ -209,9 +210,9 @@
     }
 
     .badge {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #e2e8f0;
+        background: rgba(134, 239, 172, 0.1);
+        border: 1px solid rgba(134, 239, 172, 0.2);
+        color: #d1fae5;
         padding: 8px 16px;
         border-radius: 30px;
         font-size: 13px;
@@ -255,7 +256,7 @@
 
     .progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, #38bdf8, #818cf8);
+        background: linear-gradient(90deg, #86efac, #22c55e);
         border-radius: 10px;
     }
 
@@ -263,7 +264,7 @@
         font-size: 13px;
         text-align: right;
         margin-top: 6px;
-        color: #94a3b8;
+        color: #a7f3d0;
     }
 
     /* ===== FOCUS AREA ===== */
@@ -285,12 +286,12 @@
         flex-shrink: 0;
     }
 
-    .blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-    .purple { background: rgba(129, 140, 248, 0.2); color: #818cf8; border: 1px solid rgba(129, 140, 248, 0.3); }
-    .red { background: rgba(248, 113, 113, 0.2); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
+    .blue { background: rgba(134, 239, 172, 0.15); color: #86efac; border: 1px solid rgba(134, 239, 172, 0.3); }
+    .purple { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+    .red { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
 
-    .focus-content h3 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
-    .focus-content p { font-size: 13px; color: #94a3b8; }
+    .focus-content h3 { font-size: 16px; color: #f0fdf4; margin-bottom: 4px; }
+    .focus-content p { font-size: 13px; color: #a7f3d0; }
 
     /* ===== CONNECT & SOCIALS ===== */
     .connect-card {
@@ -303,7 +304,7 @@
 
     .connect-card:hover {
         transform: translateY(-6px);
-        border-color: rgba(99, 102, 241, 0.5);
+        border-color: rgba(134, 239, 172, 0.5);
     }
 
     .connect-icon {
@@ -320,7 +321,7 @@
 
     .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
     .tiktok { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
-    .email { background: #6366f1; }
+    .email { background: #16a34a; }
     .youtube { background: #ef4444; }
 
     /* ===== ARTIKEL ===== */
@@ -335,9 +336,9 @@
 
     .article-tag {
         display: inline-block;
-        background: rgba(99, 102, 241, 0.2);
-        border: 1px solid rgba(99, 102, 241, 0.4);
-        color: #818cf8;
+        background: rgba(134, 239, 172, 0.15);
+        border: 1px solid rgba(134, 239, 172, 0.3);
+        color: #86efac;
         font-size: 11px;
         font-weight: 700;
         padding: 5px 12px;
@@ -350,14 +351,14 @@
     .article-title {
         font-size: 18px;
         font-weight: 700;
-        color: #f8fafc;
+        color: #f0fdf4;
         margin-bottom: 10px;
         line-height: 1.4;
     }
 
     .article-date {
         font-size: 13px;
-        color: #64748b;
+        color: #6ee7b7;
         margin-bottom: 14px;
         display: flex;
         align-items: center;
@@ -366,7 +367,7 @@
 
     .article-body {
         font-size: 14px;
-        color: #cbd5e1;
+        color: #d1fae5;
         line-height: 1.7;
     }
 
@@ -378,8 +379,8 @@
     }
 
     .gallery-item {
-        background: rgba(30, 41, 59, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(20, 35, 26, 0.7);
+        border: 1px solid rgba(134, 239, 172, 0.12);
         border-radius: 18px;
         overflow: hidden;
         position: relative;
@@ -401,7 +402,7 @@
         padding: 14px;
         font-size: 13px;
         font-weight: 600;
-        color: #e2e8f0;
+        color: #f0fdf4;
         text-align: center;
     }
 
@@ -415,7 +416,7 @@
         display: block;
         font-size: 12px;
         font-weight: 700;
-        color: #94a3b8;
+        color: #86efac;
         margin-bottom: 6px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -424,17 +425,17 @@
     .form-control {
         width: 100%;
         padding: 12px 16px;
-        background: rgba(15, 23, 42, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(15, 23, 18, 0.85);
+        border: 1px solid rgba(134, 239, 172, 0.2);
         border-radius: 12px;
         font-size: 14px;
-        color: #f1f5f9;
+        color: #f0fdf4;
         outline: none;
         transition: border-color 0.2s;
     }
 
     .form-control:focus {
-        border-color: #38bdf8;
+        border-color: #86efac;
     }
 
     textarea.form-control {
@@ -443,7 +444,7 @@
     }
 
     .btn {
-        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        background: linear-gradient(135deg, #16a34a, #22c55e);
         color: white;
         border: none;
         padding: 14px 24px;
@@ -487,10 +488,10 @@
     .admin-sub-title {
         font-size: 18px;
         font-weight: 700;
-        color: #f8fafc;
+        color: #f0fdf4;
         margin: 10px 0 20px;
         padding-bottom: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(134, 239, 172, 0.15);
     }
 
     .login-box {
@@ -501,7 +502,7 @@
 
     .login-icon {
         font-size: 54px;
-        color: #38bdf8;
+        color: #86efac;
         margin-bottom: 15px;
     }
 
@@ -523,7 +524,7 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <i class="fa-solid fa-code"></i> Portfolio
+                <i class="fa-solid fa-leaf"></i> Portfolio
             </div>
             <nav class="nav-tabs">
                 <button class="tab-btn active" onclick="switchTab(event, 'artikel')">
@@ -658,8 +659,8 @@
             <!-- LOGIN FORM (JIKA BELUM LOGIN) -->
             <div id="admin-login-view" class="card login-box">
                 <i class="fa-solid fa-shield-halved login-icon"></i>
-                <h2 style="margin-bottom: 10px; color:#f8fafc;">Admin Login</h2>
-                <p style="font-size:13px; color:#94a3b8; margin-bottom: 25px;">Masukkan password untuk mengelola isi website.</p>
+                <h2 style="margin-bottom: 10px; color:#f0fdf4;">Admin Login</h2>
+                <p style="font-size:13px; color:#a7f3d0; margin-bottom: 25px;">Masukkan password untuk mengelola isi website.</p>
                 
                 <div class="form-group">
                     <label>Password Admin</label>
@@ -853,31 +854,31 @@ const defaultData = {
     articles: [
         {
             id: 1,
-            tag: 'Basic Network Engineering',
-            title: 'Mengenal Dasar-Dasar Network Engineering dan Konsep Utamanya',
+            tag: 'IP ADDRESSING & SUBNETTING',
+            title: 'Panduan Lengkap IPv4 Addressing dan Teknik Subnetting VLSM',
             date: '2026',
-            body: 'Network Engineering adalah bidang teknis yang berfokus pada perencanaan, pembangunan, hingga pemeliharaan infrastruktur jaringan komputer. Seorang Network Engineer bertugas memastikan pertukaran data antar sistem berjalan lancar, aman, dan tanpa hambatan. Konsep utama yang wajib dipahami mencakup pengalamatan IP, Topologi Jaringan, serta protokol komunikasi dasar.'
+            body: 'IP Address adalah identitas unik setiap perangkat dalam jaringan. Dalam Network Engineering, memahami pengalamatan IPv4 beserta pembagian kelasnya sangatlah penting. Penggunaan teknik VLSM (Variable Length Subnet Mask) memungkinkan efisiensi alokasi IP Address sehingga mengurangi pemborosan host pada segmen jaringan yang kecil.'
         },
         {
             id: 2,
-            tag: 'Basic Network Engineering',
-            title: 'Memahami Model OSI 7 Layer dan Fungsinya dalam Komunikasi Data',
+            tag: 'NETWORK PROTOCOLS',
+            title: 'Mengenal Protokol Utama: TCP vs UDP, DNS, dan DHCP',
             date: '2026',
-            body: 'Model OSI (Open Systems Interconnection) adalah kerangka konseptual yang membagi proses komunikasi jaringan menjadi 7 lapisan: Physical, Data Link, Network, Transport, Session, Presentation, dan Application. Memahami setiap layer ini sangat penting untuk mendiagnosis kerusakan jaringan secara terstruktur.'
+            body: 'Protokol adalah aturan dasar komunikasi data. TCP (Transmission Control Protocol) mengutamakan keandalan pengiriman data (reliable), sedangkan UDP (User Datagram Protocol) mengutamakan kecepatan seperti pada streaming video. Selain itu, DHCP bertugas memberikan IP otomatis dan DNS menerjemahkan nama domain menjadi IP address.'
         },
         {
             id: 3,
-            tag: 'Basic Network Engineering',
-            title: 'Konsep IP Addressing dan Subnetting untuk Pemula',
+            tag: 'ROUTING & SWITCHING',
+            title: 'Perbedaan Static Routing dan Dynamic Routing (OSPF, BGP)',
             date: '2026',
-            body: 'IP Address berfungsi sebagai alamat identitas bagi setiap perangkat di dalam jaringan. Dalam IPv4, pengalamatan dibagi menjadi kelas A, B, dan C. Subnetting digunakan untuk membagi jaringan besar menjadi beberapa sub-jaringan kecil (subnet) agar lalu lintas data lebih efisien dan teratur.'
+            body: 'Routing bertugas menentukan jalur pengiriman paket data antar jaringan yang berbeda. Static Routing dikonfigurasi secara manual oleh Network Engineer dan cocok untuk skala kecil. Sementara Dynamic Routing seperti OSPF dan BGP dapat secara otomatis menentukan jalur terbaik berdasarkan perubahan kondisi topologi jaringan.'
         },
         {
             id: 4,
-            tag: 'Basic Network Engineering',
-            title: 'Mengenal Topologi Jaringan: Star, Bus, Ring, dan Mesh',
+            tag: 'NETWORK SECURITY',
+            title: 'Dasar-Dasar Keamanan Jaringan: Firewall dan VLAN Segmentation',
             date: '2026',
-            body: 'Topologi jaringan menentukan struktur fisik atau logis dari cara perangkat terhubung. Topologi Star adalah yang paling umum digunakan karena mudah dikelola dengan Switch pusat, sedangkan Topologi Mesh menawarkan keandalan tinggi melalui jalur cadangan.'
+            body: 'Keamanan jaringan adalah aspek krusial dalam infrastruktur IT. Firewall berfungsi sebagai penyaring lalu lintas data berdasarkan aturan keamanan tertentu. Penerapan VLAN (Virtual LAN) pada Switch juga membantu mengisolasi lalu lintas antar departemen untuk mencegah ancaman keamanan penyebaran broadcast domain.'
         }
     ],
     gallery: [
