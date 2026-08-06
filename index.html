@@ -595,11 +595,25 @@
                             <div class="percentage" id="view-skill-pct">65%</div>
                         </div>
 
-                        <!-- Skill 2 (Baru Tambah: Troubleshooting) -->
+                        <!-- Skill 2 -->
                         <div class="skill-item" style="margin-top: 15px;">
                             <div class="skill-title" id="view-skill-title2">Troubleshooting</div>
                             <div class="progress"><div class="progress-bar" id="view-skill-bar2" style="width: 50%;"></div></div>
                             <div class="percentage" id="view-skill-pct2">50%</div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-item" style="margin-top: 15px;">
+                            <div class="skill-title" id="view-skill-title3">Web Development</div>
+                            <div class="progress"><div class="progress-bar" id="view-skill-bar3" style="width: 20%;"></div></div>
+                            <div class="percentage" id="view-skill-pct3">20%</div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-item" style="margin-top: 15px;">
+                            <div class="skill-title" id="view-skill-title4">Public Speaking</div>
+                            <div class="progress"><div class="progress-bar" id="view-skill-bar4" style="width: 70%;"></div></div>
+                            <div class="percentage" id="view-skill-pct4">70%</div>
                         </div>
                     </div>
                 </div>
@@ -763,6 +777,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Skill 3 Name</label>
+                            <input type="text" id="input-skill-title3" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill 3 Percentage (%)</label>
+                            <input type="number" id="input-skill-pct3" class="form-control" min="0" max="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill 4 Name</label>
+                            <input type="text" id="input-skill-title4" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill 4 Percentage (%)</label>
+                            <input type="number" id="input-skill-pct4" class="form-control" min="0" max="100">
+                        </div>
+
+                        <div class="form-group">
                             <label>Instagram Username & Link</label>
                             <input type="text" id="input-ig-user" class="form-control" placeholder="@username">
                             <input type="text" id="input-ig-link" class="form-control" style="margin-top:8px;" placeholder="https://instagram.com/...">
@@ -870,6 +904,10 @@ const defaultData = {
         skillPct: 65,
         skillTitle2: 'Troubleshooting',
         skillPct2: 50,
+        skillTitle3: 'Web Development',
+        skillPct3: 20,
+        skillTitle4: 'Public Speaking',
+        skillPct4: 70,
         igUser: '@kaa_kemren',
         igLink: 'https://www.instagram.com/kaa_kemren',
         tiktokUser: '@kaakemren',
@@ -919,10 +957,20 @@ const defaultData = {
 // INITIALIZE APP
 let appData = JSON.parse(localStorage.getItem('myPortfolioData')) || defaultData;
 
-// Migration: Tambahkan skill 2 jika belum ada pada data tersimpan sebelumnya
-if (appData.biodata && !appData.biodata.skillTitle2) {
-    appData.biodata.skillTitle2 = 'Troubleshooting';
-    appData.biodata.skillPct2 = 50;
+// Migration: Tambahkan skill baru jika belum ada pada data tersimpan sebelumnya
+if (appData.biodata) {
+    if (!appData.biodata.skillTitle2) {
+        appData.biodata.skillTitle2 = 'Troubleshooting';
+        appData.biodata.skillPct2 = 50;
+    }
+    if (!appData.biodata.skillTitle3) {
+        appData.biodata.skillTitle3 = 'Web Development';
+        appData.biodata.skillPct3 = 20;
+    }
+    if (!appData.biodata.skillTitle4) {
+        appData.biodata.skillTitle4 = 'Public Speaking';
+        appData.biodata.skillPct4 = 70;
+    }
 }
 
 let isLoggedIn = false;
@@ -1007,6 +1055,16 @@ function renderBiodata() {
     document.getElementById('view-skill-bar2').style.width = (bio.skillPct2 || 50) + '%';
     document.getElementById('view-skill-pct2').innerText = (bio.skillPct2 || 50) + '%';
 
+    // Render Skill 3
+    document.getElementById('view-skill-title3').innerText = bio.skillTitle3 || 'Web Development';
+    document.getElementById('view-skill-bar3').style.width = (bio.skillPct3 || 20) + '%';
+    document.getElementById('view-skill-pct3').innerText = (bio.skillPct3 || 20) + '%';
+
+    // Render Skill 4
+    document.getElementById('view-skill-title4').innerText = bio.skillTitle4 || 'Public Speaking';
+    document.getElementById('view-skill-bar4').style.width = (bio.skillPct4 || 70) + '%';
+    document.getElementById('view-skill-pct4').innerText = (bio.skillPct4 || 70) + '%';
+
     document.getElementById('view-ig-user').innerText = bio.igUser;
     document.getElementById('view-ig-link').href = bio.igLink;
 
@@ -1031,6 +1089,10 @@ function renderBiodata() {
     document.getElementById('input-skill-pct').value = bio.skillPct;
     document.getElementById('input-skill-title2').value = bio.skillTitle2 || 'Troubleshooting';
     document.getElementById('input-skill-pct2').value = bio.skillPct2 || 50;
+    document.getElementById('input-skill-title3').value = bio.skillTitle3 || 'Web Development';
+    document.getElementById('input-skill-pct3').value = bio.skillPct3 || 20;
+    document.getElementById('input-skill-title4').value = bio.skillTitle4 || 'Public Speaking';
+    document.getElementById('input-skill-pct4').value = bio.skillPct4 || 70;
     document.getElementById('input-ig-user').value = bio.igUser;
     document.getElementById('input-ig-link').value = bio.igLink;
     document.getElementById('input-tiktok-user').value = bio.tiktokUser || '@kaakemren';
@@ -1094,6 +1156,10 @@ function saveBiodata() {
     bio.skillPct = document.getElementById('input-skill-pct').value;
     bio.skillTitle2 = document.getElementById('input-skill-title2').value;
     bio.skillPct2 = document.getElementById('input-skill-pct2').value;
+    bio.skillTitle3 = document.getElementById('input-skill-title3').value;
+    bio.skillPct3 = document.getElementById('input-skill-pct3').value;
+    bio.skillTitle4 = document.getElementById('input-skill-title4').value;
+    bio.skillPct4 = document.getElementById('input-skill-pct4').value;
     bio.igUser = document.getElementById('input-ig-user').value;
     bio.igLink = document.getElementById('input-ig-link').value;
     bio.tiktokUser = document.getElementById('input-tiktok-user').value;
