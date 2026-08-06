@@ -20,8 +20,8 @@
     }
 
     body {
-        background: #0f1712;
-        color: #f0fdf4;
+        background: #f4fbf6;
+        color: #1c3829;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -35,9 +35,10 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(15, 23, 18, 0.85);
+        background: rgba(255, 255, 255, 0.88);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.12);
+        border-bottom: 1px solid #dcfce7;
+        box-shadow: 0 4px 15px rgba(22, 101, 52, 0.05);
     }
 
     .nav-container {
@@ -53,9 +54,7 @@
         font-size: 20px;
         font-weight: 800;
         letter-spacing: 0.5px;
-        background: linear-gradient(135deg, #86efac, #4ade80);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #15803d;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -74,7 +73,7 @@
         padding: 10px 18px;
         font-size: 14px;
         font-weight: 600;
-        color: #a7f3d0;
+        color: #374151;
         cursor: pointer;
         border-radius: 12px;
         transition: all 0.3s ease;
@@ -84,18 +83,19 @@
     }
 
     .tab-btn:hover {
-        color: #f0fdf4;
-        background: rgba(134, 239, 172, 0.08);
+        color: #15803d;
+        background: #e8f5e9;
     }
 
     .tab-btn.active {
-        background: linear-gradient(135deg, #16a34a, #22c55e);
+        background: linear-gradient(135deg, #22c55e, #16a34a);
         color: white;
-        box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
     }
 
     .tab-btn.admin-tab {
-        border: 1px solid rgba(134, 239, 172, 0.2);
+        border: 1px solid #d1fae5;
+        background: #ffffff;
     }
 
     /* ===== MAIN CONTENT CONTAINER ===== */
@@ -123,7 +123,7 @@
     .section-title {
         font-size: 28px;
         font-weight: 800;
-        color: #f0fdf4;
+        color: #14532d;
         text-align: center;
         margin-bottom: 30px;
         letter-spacing: -0.5px;
@@ -131,32 +131,32 @@
 
     /* ===== CARD & CONTENT LAYOUT ===== */
     .card {
-        background: rgba(20, 35, 26, 0.7);
-        border: 1px solid rgba(134, 239, 172, 0.12);
+        background: #ffffff;
+        border: 1px solid #e2f2e6;
         border-radius: 20px;
         padding: 28px;
         margin-bottom: 24px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 24px rgba(22, 101, 52, 0.06);
         position: relative;
     }
 
     .card p {
         font-size: 15px;
         line-height: 1.7;
-        color: #d1fae5;
+        color: #374151;
     }
 
     /* ===== HERO / PROFILE BANNER (BIODATA) ===== */
     .hero-banner {
-        background: linear-gradient(135deg, rgba(20, 35, 26, 0.9), rgba(15, 23, 18, 0.95)),
-                    radial-gradient(circle at top right, rgba(134, 239, 172, 0.2), transparent);
-        border: 1px solid rgba(134, 239, 172, 0.18);
+        background: linear-gradient(135deg, #ffffff, #f0fdf4),
+                    radial-gradient(circle at top right, #dcfce7, transparent);
+        border: 1px solid #d1fae5;
         border-radius: 24px;
         padding: 50px 30px;
         text-align: center;
         margin-bottom: 35px;
         position: relative;
+        box-shadow: 0 10px 30px rgba(22, 101, 52, 0.08);
         overflow: hidden;
     }
 
@@ -166,8 +166,8 @@
         margin: 0 auto 20px;
         border-radius: 50%;
         padding: 4px;
-        background: linear-gradient(135deg, #86efac, #22c55e);
-        box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
+        background: linear-gradient(135deg, #4ade80, #16a34a);
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
     }
 
     .profile-img-wrap img {
@@ -183,22 +183,19 @@
         line-height: 1.2;
         letter-spacing: -0.5px;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, #ffffff, #bbf7d0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #14532d;
     }
 
     .hero-subtitle {
         font-size: 18px;
-        color: #86efac;
+        color: #16a34a;
         font-weight: 600;
         margin-bottom: 6px;
     }
 
     .hero-tagline {
         font-size: 14px;
-        color: #86efac;
-        opacity: 0.8;
+        color: #4b5563;
     }
 
     .badge-container {
@@ -210,13 +207,13 @@
     }
 
     .badge {
-        background: rgba(134, 239, 172, 0.1);
-        border: 1px solid rgba(134, 239, 172, 0.2);
-        color: #d1fae5;
+        background: #e8f5e9;
+        border: 1px solid #c8e6c9;
+        color: #1b5e20;
         padding: 8px 16px;
         border-radius: 30px;
         font-size: 13px;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     /* ===== GRID SYSTEM FOR DESKTOP ===== */
@@ -239,32 +236,41 @@
     }
 
     /* ===== SKILLS ===== */
+    .skill-item {
+        margin-bottom: 16px;
+    }
+
+    .skill-item:last-child {
+        margin-bottom: 0;
+    }
+
     .skill-title {
         font-size: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         font-weight: 600;
-        color: #e2e8f0;
+        color: #1f2937;
     }
 
     .progress {
         width: 100%;
         height: 10px;
-        background: rgba(255, 255, 255, 0.1);
+        background: #e5e7eb;
         border-radius: 10px;
         overflow: hidden;
     }
 
     .progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, #86efac, #22c55e);
+        background: linear-gradient(90deg, #4ade80, #16a34a);
         border-radius: 10px;
     }
 
     .percentage {
         font-size: 13px;
         text-align: right;
-        margin-top: 6px;
-        color: #a7f3d0;
+        margin-top: 4px;
+        color: #15803d;
+        font-weight: 600;
     }
 
     /* ===== FOCUS AREA ===== */
@@ -281,17 +287,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: #15803d;
         font-size: 26px;
         flex-shrink: 0;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
     }
 
-    .blue { background: rgba(134, 239, 172, 0.15); color: #86efac; border: 1px solid rgba(134, 239, 172, 0.3); }
-    .purple { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
-    .red { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
-
-    .focus-content h3 { font-size: 16px; color: #f0fdf4; margin-bottom: 4px; }
-    .focus-content p { font-size: 13px; color: #a7f3d0; }
+    .focus-content h3 { font-size: 16px; color: #111827; margin-bottom: 4px; }
+    .focus-content p { font-size: 13px; color: #4b5563; }
 
     /* ===== CONNECT & SOCIALS ===== */
     .connect-card {
@@ -304,7 +308,7 @@
 
     .connect-card:hover {
         transform: translateY(-6px);
-        border-color: rgba(134, 239, 172, 0.5);
+        border-color: #22c55e;
     }
 
     .connect-icon {
@@ -320,7 +324,7 @@
     }
 
     .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
-    .tiktok { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .tiktok { background: #000000; }
     .email { background: #16a34a; }
     .youtube { background: #ef4444; }
 
@@ -336,9 +340,9 @@
 
     .article-tag {
         display: inline-block;
-        background: rgba(134, 239, 172, 0.15);
-        border: 1px solid rgba(134, 239, 172, 0.3);
-        color: #86efac;
+        background: #dcfce7;
+        border: 1px solid #bbf7d0;
+        color: #15803d;
         font-size: 11px;
         font-weight: 700;
         padding: 5px 12px;
@@ -351,14 +355,14 @@
     .article-title {
         font-size: 18px;
         font-weight: 700;
-        color: #f0fdf4;
+        color: #111827;
         margin-bottom: 10px;
         line-height: 1.4;
     }
 
     .article-date {
         font-size: 13px;
-        color: #6ee7b7;
+        color: #6b7280;
         margin-bottom: 14px;
         display: flex;
         align-items: center;
@@ -367,7 +371,7 @@
 
     .article-body {
         font-size: 14px;
-        color: #d1fae5;
+        color: #374151;
         line-height: 1.7;
     }
 
@@ -379,11 +383,12 @@
     }
 
     .gallery-item {
-        background: rgba(20, 35, 26, 0.7);
-        border: 1px solid rgba(134, 239, 172, 0.12);
+        background: #ffffff;
+        border: 1px solid #e2f2e6;
         border-radius: 18px;
         overflow: hidden;
         position: relative;
+        box-shadow: 0 6px 18px rgba(22, 101, 52, 0.05);
         transition: transform 0.3s ease;
     }
 
@@ -402,7 +407,7 @@
         padding: 14px;
         font-size: 13px;
         font-weight: 600;
-        color: #f0fdf4;
+        color: #111827;
         text-align: center;
     }
 
@@ -416,7 +421,7 @@
         display: block;
         font-size: 12px;
         font-weight: 700;
-        color: #86efac;
+        color: #15803d;
         margin-bottom: 6px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -425,17 +430,17 @@
     .form-control {
         width: 100%;
         padding: 12px 16px;
-        background: rgba(15, 23, 18, 0.85);
-        border: 1px solid rgba(134, 239, 172, 0.2);
+        background: #ffffff;
+        border: 1px solid #d1fae5;
         border-radius: 12px;
         font-size: 14px;
-        color: #f0fdf4;
+        color: #1f2937;
         outline: none;
         transition: border-color 0.2s;
     }
 
     .form-control:focus {
-        border-color: #86efac;
+        border-color: #22c55e;
     }
 
     textarea.form-control {
@@ -444,7 +449,7 @@
     }
 
     .btn {
-        background: linear-gradient(135deg, #16a34a, #22c55e);
+        background: linear-gradient(135deg, #22c55e, #16a34a);
         color: white;
         border: none;
         padding: 14px 24px;
@@ -470,9 +475,9 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        background: rgba(239, 68, 68, 0.2);
-        border: 1px solid rgba(239, 68, 68, 0.4);
-        color: #f87171;
+        background: #fee2e2;
+        border: 1px solid #fca5a5;
+        color: #dc2626;
         border-radius: 8px;
         padding: 6px 12px;
         cursor: pointer;
@@ -488,10 +493,10 @@
     .admin-sub-title {
         font-size: 18px;
         font-weight: 700;
-        color: #f0fdf4;
+        color: #111827;
         margin: 10px 0 20px;
         padding-bottom: 10px;
-        border-bottom: 1px solid rgba(134, 239, 172, 0.15);
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .login-box {
@@ -502,7 +507,7 @@
 
     .login-icon {
         font-size: 54px;
-        color: #86efac;
+        color: #16a34a;
         margin-bottom: 15px;
     }
 
@@ -583,9 +588,19 @@
                 <div>
                     <h2 class="section-title" style="text-align: left;">My Skills</h2>
                     <div class="card">
-                        <div class="skill-title" id="view-skill-title">Computer Networking Basics</div>
-                        <div class="progress"><div class="progress-bar" id="view-skill-bar" style="width: 65%;"></div></div>
-                        <div class="percentage" id="view-skill-pct">65%</div>
+                        <!-- Skill 1 -->
+                        <div class="skill-item">
+                            <div class="skill-title" id="view-skill-title">Computer Networking Basics</div>
+                            <div class="progress"><div class="progress-bar" id="view-skill-bar" style="width: 65%;"></div></div>
+                            <div class="percentage" id="view-skill-pct">65%</div>
+                        </div>
+
+                        <!-- Skill 2 (Baru Tambah: Troubleshooting) -->
+                        <div class="skill-item" style="margin-top: 15px;">
+                            <div class="skill-title" id="view-skill-title2">Troubleshooting</div>
+                            <div class="progress"><div class="progress-bar" id="view-skill-bar2" style="width: 50%;"></div></div>
+                            <div class="percentage" id="view-skill-pct2">50%</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -594,7 +609,7 @@
             <h2 class="section-title" style="margin-top: 30px;">Focus Area</h2>
             <div class="grid-2">
                 <div class="card focus-card">
-                    <div class="icon-box blue"><span class="material-icons">router</span></div>
+                    <div class="icon-box"><span class="material-icons">router</span></div>
                     <div class="focus-content">
                         <h3>Networking</h3>
                         <p>Understanding network infrastructure.</p>
@@ -602,7 +617,7 @@
                 </div>
 
                 <div class="card focus-card">
-                    <div class="icon-box purple"><span class="material-icons">computer</span></div>
+                    <div class="icon-box"><span class="material-icons">computer</span></div>
                     <div class="focus-content">
                         <h3>IT Support</h3>
                         <p>Troubleshooting systems.</p>
@@ -610,7 +625,7 @@
                 </div>
 
                 <div class="card focus-card">
-                    <div class="icon-box red"><span class="material-icons">code</span></div>
+                    <div class="icon-box"><span class="material-icons">code</span></div>
                     <div class="focus-content">
                         <h3>Web Basics</h3>
                         <p>HTML & CSS development.</p>
@@ -659,8 +674,8 @@
             <!-- LOGIN FORM (JIKA BELUM LOGIN) -->
             <div id="admin-login-view" class="card login-box">
                 <i class="fa-solid fa-shield-halved login-icon"></i>
-                <h2 style="margin-bottom: 10px; color:#f0fdf4;">Admin Login</h2>
-                <p style="font-size:13px; color:#a7f3d0; margin-bottom: 25px;">Masukkan password untuk mengelola isi website.</p>
+                <h2 style="margin-bottom: 10px; color:#111827;">Admin Login</h2>
+                <p style="font-size:13px; color:#4b5563; margin-bottom: 25px;">Masukkan password untuk mengelola isi website.</p>
                 
                 <div class="form-group">
                     <label>Password Admin</label>
@@ -728,13 +743,23 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Skill Name</label>
+                            <label>Skill 1 Name</label>
                             <input type="text" id="input-skill-title" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label>Skill Percentage (%)</label>
+                            <label>Skill 1 Percentage (%)</label>
                             <input type="number" id="input-skill-pct" class="form-control" min="0" max="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill 2 Name</label>
+                            <input type="text" id="input-skill-title2" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill 2 Percentage (%)</label>
+                            <input type="number" id="input-skill-pct2" class="form-control" min="0" max="100">
                         </div>
 
                         <div class="form-group">
@@ -843,6 +868,8 @@ const defaultData = {
         about: 'Halo, saya Muhammad Kaka Ramadhan. Saya senang mempelajari bidang Computer Networking, IT Support, Cyber Security, dan Web Development.',
         skillTitle: 'Computer Networking Basics',
         skillPct: 65,
+        skillTitle2: 'Troubleshooting',
+        skillPct2: 50,
         igUser: '@kaa_kemren',
         igLink: 'https://www.instagram.com/kaa_kemren',
         tiktokUser: '@kaakemren',
@@ -891,6 +918,12 @@ const defaultData = {
 
 // INITIALIZE APP
 let appData = JSON.parse(localStorage.getItem('myPortfolioData')) || defaultData;
+
+// Migration: Tambahkan skill 2 jika belum ada pada data tersimpan sebelumnya
+if (appData.biodata && !appData.biodata.skillTitle2) {
+    appData.biodata.skillTitle2 = 'Troubleshooting';
+    appData.biodata.skillPct2 = 50;
+}
 
 let isLoggedIn = false;
 
@@ -963,9 +996,16 @@ function renderBiodata() {
     document.getElementById('view-badge2').innerText = bio.badge2;
     document.getElementById('view-badge3').innerText = bio.badge3;
     document.getElementById('view-about').innerText = bio.about;
+
+    // Render Skill 1
     document.getElementById('view-skill-title').innerText = bio.skillTitle;
     document.getElementById('view-skill-bar').style.width = bio.skillPct + '%';
     document.getElementById('view-skill-pct').innerText = bio.skillPct + '%';
+
+    // Render Skill 2
+    document.getElementById('view-skill-title2').innerText = bio.skillTitle2 || 'Troubleshooting';
+    document.getElementById('view-skill-bar2').style.width = (bio.skillPct2 || 50) + '%';
+    document.getElementById('view-skill-pct2').innerText = (bio.skillPct2 || 50) + '%';
 
     document.getElementById('view-ig-user').innerText = bio.igUser;
     document.getElementById('view-ig-link').href = bio.igLink;
@@ -989,6 +1029,8 @@ function renderBiodata() {
     document.getElementById('input-about').value = bio.about;
     document.getElementById('input-skill-title').value = bio.skillTitle;
     document.getElementById('input-skill-pct').value = bio.skillPct;
+    document.getElementById('input-skill-title2').value = bio.skillTitle2 || 'Troubleshooting';
+    document.getElementById('input-skill-pct2').value = bio.skillPct2 || 50;
     document.getElementById('input-ig-user').value = bio.igUser;
     document.getElementById('input-ig-link').value = bio.igLink;
     document.getElementById('input-tiktok-user').value = bio.tiktokUser || '@kaakemren';
@@ -1050,6 +1092,8 @@ function saveBiodata() {
     bio.about = document.getElementById('input-about').value;
     bio.skillTitle = document.getElementById('input-skill-title').value;
     bio.skillPct = document.getElementById('input-skill-pct').value;
+    bio.skillTitle2 = document.getElementById('input-skill-title2').value;
+    bio.skillPct2 = document.getElementById('input-skill-pct2').value;
     bio.igUser = document.getElementById('input-ig-user').value;
     bio.igLink = document.getElementById('input-ig-link').value;
     bio.tiktokUser = document.getElementById('input-tiktok-user').value;
