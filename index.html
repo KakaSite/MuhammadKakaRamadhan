@@ -16,320 +16,398 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Roboto, sans-serif;
+        font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
-        background: linear-gradient(135deg, #eef2ff, #e0e7ff, #f8fafc);
+        background: #0b0f19;
+        color: #f1f5f9;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 12px 80px 12px;
-        min-height: 100vh;
+        overflow-x: hidden;
     }
 
-    .container {
-        max-width: 480px;
+    /* ===== FULL WIDTH HEADER / NAVIGATION BAR ===== */
+    header {
         width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(11, 15, 25, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* ===== NAVIGATION TAB ===== */
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 24px;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
     .nav-tabs {
         display: flex;
-        justify-content: space-around;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 8px;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        position: sticky;
-        top: 15px;
-        z-index: 100;
-        margin-bottom: 25px;
+        gap: 12px;
+        align-items: center;
     }
 
     .tab-btn {
-        background: none;
+        background: transparent;
         border: none;
         outline: none;
-        padding: 8px 12px;
-        font-size: 13px;
+        padding: 10px 18px;
+        font-size: 14px;
         font-weight: 600;
-        color: #64748b;
+        color: #94a3b8;
         cursor: pointer;
         border-radius: 12px;
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 8px;
     }
 
-    .tab-btn i { font-size: 15px; }
+    .tab-btn:hover {
+        color: #f1f5f9;
+        background: rgba(255, 255, 255, 0.05);
+    }
 
     .tab-btn.active {
-        background: linear-gradient(135deg, #4a90e2, #7b61ff);
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
         color: white;
-        box-shadow: 0 4px 12px rgba(123, 97, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
     }
 
     .tab-btn.admin-tab {
-        background: #f1f5f9;
-        color: #475569;
-    }
-    
-    .tab-btn.admin-tab.active {
-        background: #1e293b;
-        color: white;
-        box-shadow: 0 4px 12px rgba(30, 41, 59, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    /* ===== PAGE CONTENT WRAPPER ===== */
+    /* ===== MAIN CONTENT CONTAINER ===== */
+    main {
+        width: 100%;
+        max-width: 1200px;
+        padding: 40px 24px 80px 24px;
+        flex: 1;
+    }
+
     .page-content {
         display: none;
-        animation: fadeIn 0.4s ease-in-out;
+        animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .page-content.active { display: block; }
+    .page-content.active {
+        display: block;
+    }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(8px); }
+        from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== SECTION TITLES & CARDS ===== */
     .section-title {
-        margin: 20px 0 15px;
-        font-size: 20px;
-        font-weight: 700;
-        color: #1e293b;
+        font-size: 28px;
+        font-weight: 800;
+        color: #f8fafc;
         text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: -0.5px;
     }
 
+    /* ===== CARD & CONTENT LAYOUT ===== */
     .card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-        border: 1px solid rgba(0,0,0,0.04);
-        margin-bottom: 20px;
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 28px;
+        margin-bottom: 24px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         position: relative;
     }
 
     .card p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #475569;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #cbd5e1;
     }
 
-    /* ===== PROFILE HEADER (BIODATA) ===== */
-    .profile-header {
-        background: linear-gradient(135deg, #4a90e2, #7b61ff);
-        padding: 35px 20px;
+    /* ===== HERO / PROFILE BANNER (BIODATA) ===== */
+    .hero-banner {
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)),
+                    radial-gradient(circle at top right, rgba(99, 102, 241, 0.25), transparent);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 24px;
-        color: white;
+        padding: 50px 30px;
         text-align: center;
-        margin-bottom: 25px;
-        box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
+        margin-bottom: 35px;
+        position: relative;
+        overflow: hidden;
     }
 
-    .profile-img {
-        width: 110px;
-        height: 110px;
-        margin: 0 auto 15px;
+    .profile-img-wrap {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 20px;
         border-radius: 50%;
         padding: 4px;
-        background: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
     }
 
-    .profile-img img {
+    .profile-img-wrap img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
         object-fit: cover;
     }
 
-    .profile-header h1 {
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 1.3;
+    .hero-banner h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, #ffffff, #cbd5e1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    .subtitle { font-size: 14px; margin-top: 6px; opacity: 0.9; }
-    .tagline { font-size: 13px; margin-top: 4px; opacity: 0.85; }
+    .hero-subtitle {
+        font-size: 18px;
+        color: #38bdf8;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .hero-tagline {
+        font-size: 14px;
+        color: #94a3b8;
+    }
 
     .badge-container {
-        margin-top: 15px;
+        margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
     }
 
     .badge {
-        background: rgba(255,255,255,0.22);
-        color: white;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 12px;
-        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    /* ===== GRID SYSTEM FOR DESKTOP ===== */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+    }
+
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 24px;
     }
 
     /* ===== SKILLS ===== */
     .skill-title {
-        font-size: 14px;
-        margin-bottom: 8px;
+        font-size: 15px;
+        margin-bottom: 10px;
         font-weight: 600;
-        color: #334155;
+        color: #e2e8f0;
     }
 
     .progress {
         width: 100%;
-        height: 9px;
-        background: #e2e8f0;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         overflow: hidden;
     }
 
     .progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, #4a90e2, #7b61ff);
+        background: linear-gradient(90deg, #38bdf8, #818cf8);
         border-radius: 10px;
     }
 
     .percentage {
-        font-size: 12px;
+        font-size: 13px;
         text-align: right;
-        margin-top: 4px;
-        color: #64748b;
+        margin-top: 6px;
+        color: #94a3b8;
     }
 
     /* ===== FOCUS AREA ===== */
     .focus-card {
         display: flex;
-        gap: 15px;
+        gap: 18px;
         align-items: center;
     }
 
     .icon-box {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-size: 24px;
+        font-size: 26px;
         flex-shrink: 0;
     }
 
-    .blue { background: #4a90e2; }
-    .purple { background: #7b61ff; }
-    .red { background: #ff5e6c; }
+    .blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .purple { background: rgba(129, 140, 248, 0.2); color: #818cf8; border: 1px solid rgba(129, 140, 248, 0.3); }
+    .red { background: rgba(248, 113, 113, 0.2); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
 
-    .focus-content h3 { font-size: 15px; color: #1e293b; margin-bottom: 3px; }
-    .focus-content p { font-size: 13px; color: #64748b; }
+    .focus-content h3 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
+    .focus-content p { font-size: 13px; color: #94a3b8; }
 
-    /* ===== CONNECT ===== */
-    a { text-decoration: none; color: inherit; }
-
+    /* ===== CONNECT & SOCIALS ===== */
     .connect-card {
         text-align: center;
-        padding: 20px;
-        transition: transform 0.2s ease;
+        padding: 24px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        display: block;
+        text-decoration: none;
     }
 
-    .connect-card:hover { transform: translateY(-4px); }
+    .connect-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(99, 102, 241, 0.5);
+    }
 
     .connect-icon {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto 10px;
-        border-radius: 14px;
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 12px;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    .instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
-    .tiktok { background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55); }
-    .email { background: #7b61ff; }
-    .youtube { background: #ff0000; }
+    .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+    .tiktok { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .email { background: #6366f1; }
+    .youtube { background: #ef4444; }
 
     /* ===== ARTIKEL ===== */
-    .article-card { padding: 22px; }
+    .article-card {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        margin-bottom: 0;
+    }
 
     .article-tag {
         display: inline-block;
-        background: #e0e7ff;
-        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(99, 102, 241, 0.4);
+        color: #818cf8;
         font-size: 11px;
         font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 6px;
+        padding: 5px 12px;
+        border-radius: 20px;
         text-transform: uppercase;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        width: fit-content;
     }
 
     .article-title {
         font-size: 18px;
         font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 8px;
+        color: #f8fafc;
+        margin-bottom: 10px;
         line-height: 1.4;
     }
 
     .article-date {
-        font-size: 12px;
-        color: #94a3b8;
-        margin-bottom: 12px;
+        font-size: 13px;
+        color: #64748b;
+        margin-bottom: 14px;
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
     }
 
     .article-body {
         font-size: 14px;
-        color: #475569;
+        color: #cbd5e1;
         line-height: 1.7;
     }
 
     /* ===== GALLERY ===== */
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
     }
 
     .gallery-item {
-        background: #ffffff;
-        border-radius: 14px;
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
         overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-        border: 1px solid rgba(0,0,0,0.04);
         position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.02);
     }
 
     .gallery-item img {
         width: 100%;
-        height: 140px;
+        height: 180px;
         object-fit: cover;
         display: block;
     }
 
     .gallery-caption {
-        padding: 10px;
-        font-size: 12px;
+        padding: 14px;
+        font-size: 13px;
         font-weight: 600;
-        color: #334155;
+        color: #e2e8f0;
         text-align: center;
     }
 
     /* ===== FORM STYLES (ADMIN) ===== */
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 18px;
         text-align: left;
     }
 
@@ -337,48 +415,51 @@
         display: block;
         font-size: 12px;
         font-weight: 700;
-        color: #334155;
-        margin-bottom: 5px;
+        color: #94a3b8;
+        margin-bottom: 6px;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .form-control {
         width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #cbd5e1;
-        border-radius: 10px;
+        padding: 12px 16px;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
         font-size: 14px;
+        color: #f1f5f9;
         outline: none;
         transition: border-color 0.2s;
     }
 
     .form-control:focus {
-        border-color: #7b61ff;
+        border-color: #38bdf8;
     }
 
     textarea.form-control {
         resize: vertical;
-        min-height: 80px;
+        min-height: 90px;
     }
 
     .btn {
-        background: linear-gradient(135deg, #4a90e2, #7b61ff);
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
         color: white;
         border: none;
-        padding: 12px 20px;
-        border-radius: 10px;
+        padding: 14px 24px;
+        border-radius: 12px;
         font-weight: 600;
         cursor: pointer;
         width: 100%;
-        font-size: 14px;
+        font-size: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        transition: opacity 0.2s;
+        transition: opacity 0.2s, transform 0.2s;
     }
 
-    .btn:hover { opacity: 0.9; }
+    .btn:hover { opacity: 0.95; transform: translateY(-1px); }
 
     .btn-danger {
         background: #ef4444;
@@ -386,13 +467,13 @@
 
     .btn-delete-card {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        background: #fee2e2;
-        color: #ef4444;
-        border: none;
+        top: 20px;
+        right: 20px;
+        background: rgba(239, 68, 68, 0.2);
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        color: #f87171;
         border-radius: 8px;
-        padding: 6px 10px;
+        padding: 6px 12px;
         cursor: pointer;
         font-size: 12px;
         font-weight: 600;
@@ -404,322 +485,353 @@
     }
 
     .admin-sub-title {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
-        color: #1e293b;
-        margin: 25px 0 15px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #e2e8f0;
+        color: #f8fafc;
+        margin: 10px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* LOGIN BOX */
     .login-box {
+        max-width: 420px;
+        margin: 40px auto;
         text-align: center;
     }
 
     .login-icon {
-        font-size: 48px;
-        color: #7b61ff;
+        font-size: 54px;
+        color: #38bdf8;
         margin-bottom: 15px;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .hero-banner h1 {
+            font-size: 28px;
+        }
     }
     </style>
 </head>
 <body>
 
-<div class="container" id="main-container">
-
-    <!-- NAVIGATION TABS -->
-    <nav class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab(event, 'artikel')">
-            <i class="fa-solid fa-newspaper"></i> Artikel
-        </button>
-        <button class="tab-btn" onclick="switchTab(event, 'biodata')">
-            <i class="fa-solid fa-user"></i> Biodata
-        </button>
-        <button class="tab-btn" onclick="switchTab(event, 'gallery')">
-            <i class="fa-solid fa-images"></i> Gallery
-        </button>
-        <button class="tab-btn admin-tab" onclick="switchTab(event, 'admin')">
-            <i class="fa-solid fa-lock"></i> Admin
-        </button>
-    </nav>
-
-    <!-- ================= HALAMAN 1: ARTIKEL ================= -->
-    <div id="artikel" class="page-content active">
-        <h2 class="section-title">Artikel Terbaru</h2>
-        <div id="articles-container"></div>
-    </div>
-
-    <!-- ================= HALAMAN 2: BIODATA ================= -->
-    <div id="biodata" class="page-content">
-        <!-- PROFILE HEADER -->
-        <div class="profile-header">
-            <div class="profile-img">
-                <img id="view-profile-img" src="PICKAKA.jpeg" alt="Profile">
+    <!-- NAVIGATION HEADER (FULL WIDTH) -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-code"></i> Portfolio
             </div>
-            <h1 id="view-name">MUHAMMAD<br>KAKA<br>RAMADHAN</h1>
-            <p class="subtitle" id="view-subtitle">TJKT 2 Student, SMK Negeri 1 Cirebon</p>
-            <p class="tagline" id="view-tagline">Aspiring IT & Networking Enthusiast</p>
+            <nav class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'artikel')">
+                    <i class="fa-solid fa-newspaper"></i> Artikel
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'biodata')">
+                    <i class="fa-solid fa-user"></i> Biodata
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'gallery')">
+                    <i class="fa-solid fa-images"></i> Gallery
+                </button>
+                <button class="tab-btn admin-tab" onclick="switchTab(event, 'admin')">
+                    <i class="fa-solid fa-lock"></i> Admin
+                </button>
+            </nav>
+        </div>
+    </header>
 
-            <div class="badge-container">
-                <div class="badge" id="view-badge1">📍 West Java, Indonesia</div>
-                <div class="badge" id="view-badge-birth">🎂 31 Agustus 2005</div>
-                <div class="badge" id="view-badge2">🎓 Class X TJKT 2</div>
-                <div class="badge" id="view-badge3">💻 Networking Student</div>
+    <!-- MAIN CONTENT -->
+    <main id="main-container">
+
+        <!-- ================= HALAMAN 1: ARTIKEL ================= -->
+        <div id="artikel" class="page-content active">
+            <h2 class="section-title">Artikel & Tutorial Jaringan</h2>
+            <div id="articles-container" class="articles-grid"></div>
+        </div>
+
+        <!-- ================= HALAMAN 2: BIODATA ================= -->
+        <div id="biodata" class="page-content">
+            <!-- HERO BANNER -->
+            <div class="hero-banner">
+                <div class="profile-img-wrap">
+                    <img id="view-profile-img" src="PICKAKA.jpeg" alt="Profile">
+                </div>
+                <h1 id="view-name">MUHAMMAD KAKA RAMADHAN</h1>
+                <p class="hero-subtitle" id="view-subtitle">TJKT 2 Student, SMK Negeri 1 Cirebon</p>
+                <p class="hero-tagline" id="view-tagline">Aspiring IT & Networking Enthusiast</p>
+
+                <div class="badge-container">
+                    <div class="badge" id="view-badge1">📍 West Java, Indonesia</div>
+                    <div class="badge" id="view-badge-birth">🎂 31 Agustus 2005</div>
+                    <div class="badge" id="view-badge2">🎓 Class X TJKT 2</div>
+                    <div class="badge" id="view-badge3">💻 Networking Student</div>
+                </div>
+            </div>
+
+            <!-- ABOUT & SKILLS GRID -->
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">About Me</h2>
+                    <div class="card">
+                        <p id="view-about">Halo, saya <strong>Muhammad Kaka Ramadhan</strong>. Saya senang mempelajari bidang Computer Networking, IT Support, Cyber Security, dan Web Development.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title" style="text-align: left;">My Skills</h2>
+                    <div class="card">
+                        <div class="skill-title" id="view-skill-title">Computer Networking Basics</div>
+                        <div class="progress"><div class="progress-bar" id="view-skill-bar" style="width: 65%;"></div></div>
+                        <div class="percentage" id="view-skill-pct">65%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOCUS AREA -->
+            <h2 class="section-title" style="margin-top: 30px;">Focus Area</h2>
+            <div class="grid-2">
+                <div class="card focus-card">
+                    <div class="icon-box blue"><span class="material-icons">router</span></div>
+                    <div class="focus-content">
+                        <h3>Networking</h3>
+                        <p>Understanding network infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="card focus-card">
+                    <div class="icon-box purple"><span class="material-icons">computer</span></div>
+                    <div class="focus-content">
+                        <h3>IT Support</h3>
+                        <p>Troubleshooting systems.</p>
+                    </div>
+                </div>
+
+                <div class="card focus-card">
+                    <div class="icon-box red"><span class="material-icons">code</span></div>
+                    <div class="focus-content">
+                        <h3>Web Basics</h3>
+                        <p>HTML & CSS development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONNECT WITH ME -->
+            <h2 class="section-title" style="margin-top: 30px;">Connect With Me</h2>
+            <div class="grid-4">
+                <a id="view-ig-link" href="https://www.instagram.com/kaa_kemren" target="_blank" class="card connect-card">
+                    <div class="connect-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+                    <h4>Instagram</h4>
+                    <p id="view-ig-user">@kaa_kemren</p>
+                </a>
+
+                <a id="view-tiktok-link" href="https://www.tiktok.com/@kaakemren?_r=1&_t=ZS-98e6ogJjncG" target="_blank" class="card connect-card">
+                    <div class="connect-icon tiktok"><i class="fa-brands fa-tiktok"></i></div>
+                    <h4>TikTok</h4>
+                    <p id="view-tiktok-user">@kaakemren</p>
+                </a>
+
+                <a id="view-email-link" href="mailto:mkakaramadhan08@gmail.com" class="card connect-card">
+                    <div class="connect-icon email"><i class="fa-solid fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <p id="view-email-user">mkakaramadhan08@gmail.com</p>
+                </a>
+
+                <a id="view-yt-link" href="https://www.youtube.com/@MUHAMMADKAKARAMADHAN-08" target="_blank" class="card connect-card">
+                    <div class="connect-icon youtube"><i class="fa-brands fa-youtube"></i></div>
+                    <h4>YouTube</h4>
+                    <p id="view-yt-user">@MUHAMMADKAKARAMADHAN-08</p>
+                </a>
             </div>
         </div>
 
-        <!-- ABOUT -->
-        <h2 class="section-title">About Me</h2>
-        <div class="card">
-            <p id="view-about">Halo, saya <strong>Muhammad Kaka Ramadhan</strong>. Saya senang mempelajari bidang Computer Networking, IT Support, Cyber Security, dan Web Development.</p>
+        <!-- ================= HALAMAN 3: GALLERY ================= -->
+        <div id="gallery" class="page-content">
+            <h2 class="section-title">Dokumentasi & Galeri</h2>
+            <div class="gallery-grid" id="gallery-container"></div>
         </div>
 
-        <!-- SKILLS -->
-        <h2 class="section-title">My Skills</h2>
-        <div class="card">
-            <div class="skill-title" id="view-skill-title">Computer Networking Basics</div>
-            <div class="progress"><div class="progress-bar" id="view-skill-bar" style="width: 65%;"></div></div>
-            <div class="percentage" id="view-skill-pct">65%</div>
-        </div>
-
-        <!-- FOCUS AREA -->
-        <h2 class="section-title">Focus Area</h2>
-
-        <div class="card focus-card">
-            <div class="icon-box blue"><span class="material-icons">router</span></div>
-            <div class="focus-content">
-                <h3>Networking</h3>
-                <p>Understanding network infrastructure.</p>
-            </div>
-        </div>
-
-        <div class="card focus-card">
-            <div class="icon-box purple"><span class="material-icons">computer</span></div>
-            <div class="focus-content">
-                <h3>IT Support</h3>
-                <p>Troubleshooting systems.</p>
-            </div>
-        </div>
-
-        <div class="card focus-card">
-            <div class="icon-box red"><span class="material-icons">code</span></div>
-            <div class="focus-content">
-                <h3>Web Basics</h3>
-                <p>HTML & CSS development.</p>
-            </div>
-        </div>
-
-        <!-- CONNECT -->
-        <h2 class="section-title">Connect With Me</h2>
-
-        <a id="view-ig-link" href="https://www.instagram.com/kaa_kemren" target="_blank" class="card connect-card">
-            <div class="connect-icon instagram"><i class="fa-brands fa-instagram"></i></div>
-            <h4>Instagram</h4>
-            <p id="view-ig-user">@kaa_kemren</p>
-        </a>
-
-        <a id="view-tiktok-link" href="https://www.tiktok.com/@kaakemren?_r=1&_t=ZS-98e6ogJjncG" target="_blank" class="card connect-card">
-            <div class="connect-icon tiktok"><i class="fa-brands fa-tiktok"></i></div>
-            <h4>TikTok</h4>
-            <p id="view-tiktok-user">@kaakemren</p>
-        </a>
-
-        <a id="view-email-link" href="mailto:mkakaramadhan08@gmail.com" class="card connect-card">
-            <div class="connect-icon email"><i class="fa-solid fa-envelope"></i></div>
-            <h4>Email</h4>
-            <p id="view-email-user">mkakaramadhan08@gmail.com</p>
-        </a>
-
-        <a id="view-yt-link" href="https://www.youtube.com/@MUHAMMADKAKARAMADHAN-08" target="_blank" class="card connect-card">
-            <div class="connect-icon youtube"><i class="fa-brands fa-youtube"></i></div>
-            <h4>YouTube</h4>
-            <p id="view-yt-user">@MUHAMMADKAKARAMADHAN-08</p>
-        </a>
-    </div>
-
-    <!-- ================= HALAMAN 3: GALLERY ================= -->
-    <div id="gallery" class="page-content">
-        <h2 class="section-title">Dokumentasi & Galeri</h2>
-        <div class="gallery-grid" id="gallery-container"></div>
-    </div>
-
-    <!-- ================= HALAMAN 4: ADMIN PANEL ================= -->
-    <div id="admin" class="page-content">
-        
-        <!-- LOGIN FORM (JIKA BELUM LOGIN) -->
-        <div id="admin-login-view" class="card login-box">
-            <i class="fa-solid fa-shield-halved login-icon"></i>
-            <h2 style="margin-bottom: 10px; color:#1e293b;">Admin Login</h2>
-            <p style="font-size:12px; color:#64748b; margin-bottom: 20px;">Masukkan password untuk mengakses Admin Panel.</p>
+        <!-- ================= HALAMAN 4: ADMIN PANEL ================= -->
+        <div id="admin" class="page-content">
             
-            <div class="form-group">
-                <label>Password Admin</label>
-                <input type="password" id="input-password" class="form-control" placeholder="Password default: 12345">
+            <!-- LOGIN FORM (JIKA BELUM LOGIN) -->
+            <div id="admin-login-view" class="card login-box">
+                <i class="fa-solid fa-shield-halved login-icon"></i>
+                <h2 style="margin-bottom: 10px; color:#f8fafc;">Admin Login</h2>
+                <p style="font-size:13px; color:#94a3b8; margin-bottom: 25px;">Masukkan password untuk mengelola isi website.</p>
+                
+                <div class="form-group">
+                    <label>Password Admin</label>
+                    <input type="password" id="input-password" class="form-control" placeholder="Password default: 12345">
+                </div>
+
+                <button class="btn" onclick="checkLogin()"><i class="fa-solid fa-right-to-bracket"></i> Masuk Admin</button>
             </div>
 
-            <button class="btn" onclick="checkLogin()"><i class="fa-solid fa-right-to-bracket"></i> Masuk Admin</button>
+            <!-- DASHBOARD ADMIN (JIKA SUDAH LOGIN) -->
+            <div id="admin-dashboard-view" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h2 class="section-title" style="margin:0;">Dashboard Admin</h2>
+                    <button class="btn btn-danger" style="width: auto; padding: 10px 18px;" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+
+                <div class="grid-2">
+                    <!-- EDIT BIODATA -->
+                    <div class="card">
+                        <h3 class="admin-sub-title">Edit Biodata & Profil</h3>
+                        
+                        <div class="form-group">
+                            <label>Foto Profil (Upload Baru)</label>
+                            <input type="file" id="input-profile-img" class="form-control" accept="image/*">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="text" id="input-name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <input type="text" id="input-birth" class="form-control" placeholder="Contoh: 31 Agustus 2005">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subtitle / Sekolah</label>
+                            <input type="text" id="input-subtitle" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tagline</label>
+                            <input type="text" id="input-tagline" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Badge 1</label>
+                            <input type="text" id="input-badge1" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Badge 2</label>
+                            <input type="text" id="input-badge2" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Badge 3</label>
+                            <input type="text" id="input-badge3" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi "About Me"</label>
+                            <textarea id="input-about" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill Name</label>
+                            <input type="text" id="input-skill-title" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skill Percentage (%)</label>
+                            <input type="number" id="input-skill-pct" class="form-control" min="0" max="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Instagram Username & Link</label>
+                            <input type="text" id="input-ig-user" class="form-control" placeholder="@username">
+                            <input type="text" id="input-ig-link" class="form-control" style="margin-top:8px;" placeholder="https://instagram.com/...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>TikTok Username & Link</label>
+                            <input type="text" id="input-tiktok-user" class="form-control" placeholder="@username">
+                            <input type="text" id="input-tiktok-link" class="form-control" style="margin-top:8px;" placeholder="https://www.tiktok.com/@...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="text" id="input-email-user" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>YouTube Username & Link</label>
+                            <input type="text" id="input-yt-user" class="form-control" placeholder="@channel">
+                            <input type="text" id="input-yt-link" class="form-control" style="margin-top:8px;" placeholder="https://youtube.com/...">
+                        </div>
+
+                        <button class="btn" onclick="saveBiodata()"><i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan Biodata</button>
+                    </div>
+
+                    <div>
+                        <!-- KELOLA ARTIKEL -->
+                        <div class="card">
+                            <h3 class="admin-sub-title">Tambah Artikel Baru</h3>
+                            
+                            <div class="form-group">
+                                <label>Kategori / Tag</label>
+                                <input type="text" id="input-article-tag" class="form-control" placeholder="Contoh: NETWORK ENGINEERING">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Judul Artikel</label>
+                                <input type="text" id="input-article-title" class="form-control" placeholder="Judul artikel...">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tahun / Tanggal</label>
+                                <input type="text" id="input-article-date" class="form-control" placeholder="2026">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Isi Artikel</label>
+                                <textarea id="input-article-body" class="form-control" placeholder="Tuliskan paragraf artikel di sini..."></textarea>
+                            </div>
+
+                            <button class="btn" onclick="addArticle()"><i class="fa-solid fa-plus"></i> Tambah Artikel</button>
+                        </div>
+
+                        <!-- KELOLA GALLERY -->
+                        <div class="card">
+                            <h3 class="admin-sub-title">Upload Foto Galeri Baru</h3>
+                            
+                            <div class="form-group">
+                                <label>Pilih File Gambar</label>
+                                <input type="file" id="input-gallery-file" class="form-control" accept="image/*">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Judul / Caption Foto</label>
+                                <input type="text" id="input-gallery-caption" class="form-control" placeholder="Contoh: Praktikum Jaringan">
+                            </div>
+
+                            <button class="btn" onclick="addGalleryItem()"><i class="fa-solid fa-upload"></i> Upload & Tambah ke Galeri</button>
+                        </div>
+
+                        <!-- GANTI PASSWORD -->
+                        <div class="card">
+                            <h3 class="admin-sub-title">Keamanan / Ganti Password</h3>
+                            <div class="form-group">
+                                <label>Password Baru</label>
+                                <input type="password" id="input-new-pass" class="form-control" placeholder="Masukkan password baru">
+                            </div>
+                            <button class="btn" onclick="changePassword()"><i class="fa-solid fa-key"></i> Update Password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- DASHBOARD ADMIN (JIKA SUDAH LOGIN) -->
-        <div id="admin-dashboard-view" style="display: none;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 class="section-title" style="margin:0;">Admin Panel</h2>
-                <button class="btn btn-danger" style="width: auto; padding: 8px 14px;" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-            </div>
-
-            <!-- EDIT BIODATA -->
-            <div class="card">
-                <h3 class="admin-sub-title" style="margin-top:0;">Edit Biodata & Profil</h3>
-                
-                <div class="form-group">
-                    <label>Foto Profil (Upload Baru)</label>
-                    <input type="file" id="input-profile-img" class="form-control" accept="image/*">
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="input-name" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Tanggal Lahir</label>
-                    <input type="text" id="input-birth" class="form-control" placeholder="Contoh: 31 Agustus 2005">
-                </div>
-
-                <div class="form-group">
-                    <label>Subtitle / Sekolah</label>
-                    <input type="text" id="input-subtitle" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Tagline</label>
-                    <input type="text" id="input-tagline" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Badge 1</label>
-                    <input type="text" id="input-badge1" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Badge 2</label>
-                    <input type="text" id="input-badge2" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Badge 3</label>
-                    <input type="text" id="input-badge3" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Deskripsi "About Me"</label>
-                    <textarea id="input-about" class="form-control"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Skill Name</label>
-                    <input type="text" id="input-skill-title" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Skill Percentage (%)</label>
-                    <input type="number" id="input-skill-pct" class="form-control" min="0" max="100">
-                </div>
-
-                <div class="form-group">
-                    <label>Instagram Username / Link</label>
-                    <input type="text" id="input-ig-user" class="form-control" placeholder="@username">
-                    <input type="text" id="input-ig-link" class="form-control" style="margin-top:5px;" placeholder="https://instagram.com/...">
-                </div>
-
-                <div class="form-group">
-                    <label>TikTok Username / Link</label>
-                    <input type="text" id="input-tiktok-user" class="form-control" placeholder="@username">
-                    <input type="text" id="input-tiktok-link" class="form-control" style="margin-top:5px;" placeholder="https://www.tiktok.com/@...">
-                </div>
-
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="text" id="input-email-user" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>YouTube Username / Link</label>
-                    <input type="text" id="input-yt-user" class="form-control" placeholder="@channel">
-                    <input type="text" id="input-yt-link" class="form-control" style="margin-top:5px;" placeholder="https://youtube.com/...">
-                </div>
-
-                <button class="btn" onclick="saveBiodata()"><i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan Biodata</button>
-            </div>
-
-            <!-- KELOLA ARTIKEL -->
-            <div class="card">
-                <h3 class="admin-sub-title" style="margin-top:0;">Tambah Artikel Baru</h3>
-                
-                <div class="form-group">
-                    <label>Kategori / Tag</label>
-                    <input type="text" id="input-article-tag" class="form-control" placeholder="Contoh: NETWORK ENGINEERING">
-                </div>
-
-                <div class="form-group">
-                    <label>Judul Artikel</label>
-                    <input type="text" id="input-article-title" class="form-control" placeholder="Judul artikel...">
-                </div>
-
-                <div class="form-group">
-                    <label>Tahun / Tanggal</label>
-                    <input type="text" id="input-article-date" class="form-control" placeholder="2026">
-                </div>
-
-                <div class="form-group">
-                    <label>Isi Artikel</label>
-                    <textarea id="input-article-body" class="form-control" placeholder="Tuliskan paragraf artikel di sini..."></textarea>
-                </div>
-
-                <button class="btn" onclick="addArticle()"><i class="fa-solid fa-plus"></i> Tambah Artikel</button>
-            </div>
-
-            <!-- KELOLA GALLERY -->
-            <div class="card">
-                <h3 class="admin-sub-title" style="margin-top:0;">Upload Foto Galeri Baru</h3>
-                
-                <div class="form-group">
-                    <label>Pilih File Gambar</label>
-                    <input type="file" id="input-gallery-file" class="form-control" accept="image/*">
-                </div>
-
-                <div class="form-group">
-                    <label>Judul / Caption Foto</label>
-                    <input type="text" id="input-gallery-caption" class="form-control" placeholder="Contoh: Praktikum Jaringan">
-                </div>
-
-                <button class="btn" onclick="addGalleryItem()"><i class="fa-solid fa-upload"></i> Upload & Tambah ke Galeri</button>
-            </div>
-
-            <!-- GANTI PASSWORD -->
-            <div class="card">
-                <h3 class="admin-sub-title" style="margin-top:0;">Keamanan / Ganti Password</h3>
-                <div class="form-group">
-                    <label>Password Baru</label>
-                    <input type="password" id="input-new-pass" class="form-control" placeholder="Masukkan password baru">
-                </div>
-                <button class="btn" onclick="changePassword()"><i class="fa-solid fa-key"></i> Update Password</button>
-            </div>
-        </div>
-
-    </div>
-
-</div>
+    </main>
 
 <!-- JAVASCRIPT UNTUK INTERAKSI & LOCAL STORAGE -->
 <script>
-// DATA DEFAULT (JIKA BELUM ADA DATA TERSIMPAN)
+// DATA DEFAULT
 const defaultData = {
     adminPassword: '12345',
     biodata: {
         profileImg: 'PICKAKA.jpeg',
-        nameHTML: 'MUHAMMAD<br>KAKA<br>RAMADHAN',
+        nameHTML: 'MUHAMMAD KAKA RAMADHAN',
         nameText: 'MUHAMMAD KAKA RAMADHAN',
         birthdate: '31 Agustus 2005',
         subtitle: 'TJKT 2 Student, SMK Negeri 1 Cirebon',
@@ -740,25 +852,32 @@ const defaultData = {
     },
     articles: [
         {
-            id: 3,
-            tag: 'Network Engineering',
+            id: 1,
+            tag: 'Basic Network Engineering',
             title: 'Mengenal Dasar-Dasar Network Engineering dan Konsep Utamanya',
             date: '2026',
-            body: 'Network Engineering adalah bidang teknis yang berfokus pada perencanaan, pembangunan, hingga pemeliharaan infrastruktur jaringan komputer. Seorang Network Engineer bertugas memastikan pertukaran data antar sistem berjalan lancar, aman, dan tanpa hambatan. Konsep utama yang wajib dipahami mencakup pengalamatan IP (IP Addressing & Subnetting), Topologi Jaringan (seperti Star dan Mesh), serta protokol dasar komunikasi seperti TCP/IP, DNS, dan DHCP.'
-        },
-        {
-            id: 1,
-            tag: 'Komputer & Jaringan',
-            title: 'Pentingnya Memahami Dasar Networking bagi Siswa TJKT',
-            date: '2026',
-            body: 'Sebagai siswa TJKT (Teknik Jaringan Komputer dan Telekomunikasi), memahami dasar-dasar jaringan seperti model OSI, IP Addressing, dan Subnetting adalah fondasi utama. Tanpa pemahaman ini, proses troubleshooting jaringan fisik maupun nirkabel akan terasa sulit.'
+            body: 'Network Engineering adalah bidang teknis yang berfokus pada perencanaan, pembangunan, hingga pemeliharaan infrastruktur jaringan komputer. Seorang Network Engineer bertugas memastikan pertukaran data antar sistem berjalan lancar, aman, dan tanpa hambatan. Konsep utama yang wajib dipahami mencakup pengalamatan IP, Topologi Jaringan, serta protokol komunikasi dasar.'
         },
         {
             id: 2,
-            tag: 'Teknologi',
-            title: 'Mengenal Fungsi Router dan Switch dalam Jaringan',
+            tag: 'Basic Network Engineering',
+            title: 'Memahami Model OSI 7 Layer dan Fungsinya dalam Komunikasi Data',
             date: '2026',
-            body: 'Seringkali pemula bingung membedakan Router dan Switch. Singkatnya, Switch berfungsi untuk menghubungkan beberapa perangkat dalam satu jaringan lokal (LAN), sedangkan Router bertugas menghubungkan beberapa jaringan yang berbeda agar bisa saling berkomunikasi.'
+            body: 'Model OSI (Open Systems Interconnection) adalah kerangka konseptual yang membagi proses komunikasi jaringan menjadi 7 lapisan: Physical, Data Link, Network, Transport, Session, Presentation, dan Application. Memahami setiap layer ini sangat penting untuk mendiagnosis kerusakan jaringan secara terstruktur.'
+        },
+        {
+            id: 3,
+            tag: 'Basic Network Engineering',
+            title: 'Konsep IP Addressing dan Subnetting untuk Pemula',
+            date: '2026',
+            body: 'IP Address berfungsi sebagai alamat identitas bagi setiap perangkat di dalam jaringan. Dalam IPv4, pengalamatan dibagi menjadi kelas A, B, dan C. Subnetting digunakan untuk membagi jaringan besar menjadi beberapa sub-jaringan kecil (subnet) agar lalu lintas data lebih efisien dan teratur.'
+        },
+        {
+            id: 4,
+            tag: 'Basic Network Engineering',
+            title: 'Mengenal Topologi Jaringan: Star, Bus, Ring, dan Mesh',
+            date: '2026',
+            body: 'Topologi jaringan menentukan struktur fisik atau logis dari cara perangkat terhubung. Topologi Star adalah yang paling umum digunakan karena mudah dikelola dengan Switch pusat, sedangkan Topologi Mesh menawarkan keandalan tinggi melalui jalur cadangan.'
         }
     ],
     gallery: [
@@ -771,12 +890,6 @@ const defaultData = {
 
 // INITIALIZE APP
 let appData = JSON.parse(localStorage.getItem('myPortfolioData')) || defaultData;
-
-// Migration check: Ensure TikTok fields exist if upgrading from older saved state
-if (appData.biodata && !appData.biodata.tiktokUser) {
-    appData.biodata.tiktokUser = '@kaakemren';
-    appData.biodata.tiktokLink = 'https://www.tiktok.com/@kaakemren?_r=1&_t=ZS-98e6ogJjncG';
-}
 
 let isLoggedIn = false;
 
@@ -841,7 +954,7 @@ function switchTab(event, tabId) {
 function renderBiodata() {
     const bio = appData.biodata;
     document.getElementById('view-profile-img').src = bio.profileImg;
-    document.getElementById('view-name').innerHTML = bio.nameHTML || bio.nameText;
+    document.getElementById('view-name').innerText = bio.nameText || bio.nameHTML;
     document.getElementById('view-subtitle').innerText = bio.subtitle;
     document.getElementById('view-tagline').innerText = bio.tagline;
     document.getElementById('view-badge1').innerText = bio.badge1;
@@ -865,7 +978,7 @@ function renderBiodata() {
     document.getElementById('view-yt-link').href = bio.ytLink;
 
     // Populate form inputs in Admin
-    document.getElementById('input-name').value = bio.nameText || bio.nameHTML.replace(/<br>/g, ' ');
+    document.getElementById('input-name').value = bio.nameText || bio.nameHTML;
     document.getElementById('input-birth').value = bio.birthdate || '31 Agustus 2005';
     document.getElementById('input-subtitle').value = bio.subtitle;
     document.getElementById('input-tagline').value = bio.tagline;
@@ -892,11 +1005,13 @@ function renderArticles() {
         const card = document.createElement('article');
         card.className = 'card article-card';
         card.innerHTML = `
-            <button class="btn-delete-card" onclick="deleteArticle(${art.id})"><i class="fa-solid fa-trash"></i> Hapus</button>
-            <span class="article-tag">${art.tag}</span>
-            <h3 class="article-title">${art.title}</h3>
-            <div class="article-date"><i class="fa-regular fa-calendar"></i> ${art.date}</div>
-            <p class="article-body">${art.body}</p>
+            <div>
+                <button class="btn-delete-card" onclick="deleteArticle(${art.id})"><i class="fa-solid fa-trash"></i> Hapus</button>
+                <span class="article-tag">${art.tag}</span>
+                <h3 class="article-title">${art.title}</h3>
+                <div class="article-date"><i class="fa-regular fa-calendar"></i> ${art.date}</div>
+                <p class="article-body">${art.body}</p>
+            </div>
         `;
         container.appendChild(card);
     });
@@ -910,7 +1025,7 @@ function renderGallery() {
         const div = document.createElement('div');
         div.className = 'gallery-item';
         div.innerHTML = `
-            <button class="btn-delete-card" style="top:8px; right:8px;" onclick="deleteGalleryItem(${item.id})"><i class="fa-solid fa-trash"></i></button>
+            <button class="btn-delete-card" style="top:10px; right:10px;" onclick="deleteGalleryItem(${item.id})"><i class="fa-solid fa-trash"></i></button>
             <img src="${item.img}" alt="${item.caption}">
             <div class="gallery-caption">${item.caption}</div>
         `;
@@ -924,7 +1039,7 @@ function saveBiodata() {
     const bio = appData.biodata;
 
     bio.nameText = document.getElementById('input-name').value;
-    bio.nameHTML = bio.nameText.replace(/ /g, '<br>');
+    bio.nameHTML = bio.nameText;
     bio.birthdate = document.getElementById('input-birth').value;
     bio.subtitle = document.getElementById('input-subtitle').value;
     bio.tagline = document.getElementById('input-tagline').value;
@@ -971,7 +1086,7 @@ function addArticle() {
 
     const newArt = {
         id: Date.now(),
-        tag: tag || 'UMUM',
+        tag: tag || 'BASIC NETWORK ENGINEERING',
         title,
         date: date || new Date().getFullYear(),
         body
